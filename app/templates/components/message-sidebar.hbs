@@ -1,0 +1,27 @@
+<div id="sidr">
+    <!-- Your content -->
+      <div id="sidr-header">
+        <p>
+          Messages (2)
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="row" style="background-color: #fff;">
+          <div class="col-md-2 chat-icons">
+            <img src="/assets/images/chat-icons.png" class="chat-icons-picture" />
+          </div>
+          <div class="col-md-10 chat-text">
+            <img src="/assets/images/chat-body.png" class="chat-text-picture" style="width: 440px;" />
+            <div class="input-group chat-input-box">
+              {{input type="text" value=search-term class="form-control chatbox" placeholder="..." enter="searchInterests"}}
+              <span class="input-group-btn">
+                <button class="btn btn-default search-button chat-button" type="button" {{action 'searchInterests' search-term}}>Send!</button>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>

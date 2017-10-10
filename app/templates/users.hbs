@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="row profile-list">
+    <div class="col-12 volunteer-list">
+      <p class="back-button">
+        <img src="/assets/images/back.png" class="back-icon" /> {{link-to "back" "interests"}}
+      </p>
+
+      {{!-- {{currentInterests}} --}}
+      <div class="interests-block row">
+        {{#each currentInterests as |interest|}}
+          <div class="col-md-3 search-interest-box hiking-button">
+            <img src="/assets/images/{{interest}}@2x.png" class="hiker-logo" />
+            <span>{{interest}}</span>
+            <button {{action 'removeInterest' interest}} type="button" class="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+      {{/each}}
+
+      {{interest-filter buttonClick=(action "buttonClick" interest=interest)}}
+    </div>
+
+      <div class="white-line">
+      </div>
+
+      {{#each filteredUsers as |user|}}
+      <div class="container volunteer-profile">
+        <div class="row">
+          <div class="col-md-3 volunteer-left-column">
+            <img src="{{user.avatar}}" alt="" style="width: 100%">
+            <span><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>{{user.city}}, {{user.country}}</span>
+          </div>
+          <div class="col-md-9 volunteer-right-column">
+            <h1>{{user.name}}</h1>
+            <h4>{{user.gender}}</h4>
+            <p class="profile-description">{{user.biography}}</p>
+            <div class="line"></div>
+
+              <div class="row">
+
+                <div class="col-md-6">
+                  <p>INTERESTS</P>
+                    <ul class="interests">
+                    {{#each user.interests as |interest|}}
+                        <li>{{interest.name}}</li>
+                    {{/each}}
+                  </ul>
+                </div>
+
+                <div class="col-md-6">
+                  <p>I CAN HELP WITH</p>
+                  <ul class="help-with">
+                    <li>Dog Walking</li>
+                  </ul>
+                </div>
+
+            </div>
+
+              <p>HIGHLIGHT REVIEW</p>
+              <div class="review">
+                <blockquote class="blockquote">
+                  <p class='mb-0'>{{user.review}}</p>
+                </blockquote>
+              </div>
+          </div>
+        </div>
+      </div>
+      {{else}}
+        <h1>Nobody matched your search! Try changing your parameters and trying again!</h1>
+      {{/each}}
+
+    </div>
+  </div>
+</div>
+
+<div class="Rectangle-4b">
+  <div class="container">
+    <div class="row footer-slider-row">
+      <div class="col-md-4 footer-slider">
+        <font color = #cecece> LOCATION</font> <br /><br />
+        <font color = #282828> {{if city city "all"}}</font> <br />
+        {{location-picker}}
+      </div>
+      <div class="col-md-4 footer-slider">
+        <font color = #cecece> LANGUAGE</font> <br /><br />
+        <font color = #282828> {{if language language "all"}}</font> <br />
+        {{language-picker}}
+      </div>
+      <div class="col-md-4 footer-slider-last">
+        <font color = #cecece> GENDER</font> <br /><br />
+        <font color = #282828>{{if gender gender "all"}}</font> <br />
+        {{gender-picker}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{outlet}}

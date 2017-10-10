@@ -1,0 +1,77 @@
+<div class="container home-welcome">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="Morning-Jony">
+        Morning, <b>Donald</b>.
+      </div>
+    </div>
+  </div>
+  <div class="row">
+  <div class="col-lg-8 search-bar">
+    <div class="input-group">
+      <i class="glyphicon glyphicon-search"></i>
+      {{input type="text" value=search-term class="form-control" placeholder="FIND SOMEONE FOR..." enter="searchInterests"}}
+      <span class="input-group-btn">
+        <button class="btn btn-default search-button" type="button" {{action 'searchInterests' search-term}}>Go!</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+  <div class="col-md-4">
+  </div>
+</div><!-- /.row -->
+
+</div>
+
+<div class="container">
+  <div class="row">
+    {{#link-to "users" (query-params interests='hiking')}}
+    <div class="col-md-4 interest-box hiking-button">
+      <img src="/assets/images/hiking@2x.png" class="button-image-large"/>
+        <span>Hiking</span>
+    </div>
+    {{/link-to}}
+    {{#link-to "users" (query-params interests='dog walking')}}
+    <div class="col-md-4 interest-box dog-button">
+      <img src="/assets/images/dog walking@2x.png" class="button-image-large"/>
+
+    <span>Dog Walking</span>
+    </div>
+  {{/link-to}}
+    <div class="col-md-2">
+    </div>
+  </div>
+
+  <div class="row">
+    {{#link-to "users" (query-params interests='water aerobics')}}
+    <div class="col-md-4 interest-box water-button">
+      <img src="/assets/images/water aerobics@2x.png" class="button-image-large"/>
+
+        <span>Water Aerobics</span>
+    </div>
+    {{/link-to}}
+    {{#link-to "users" (query-params interests='cycling')}}
+    <div class="col-md-4 interest-box cycling-button">
+      <img src="/assets/images/cycling@2x.png" class="button-image-large"/>
+        <span>Cycling</span>
+    </div>
+    {{/link-to}}
+    <div class="col-md-2">
+    </div>
+  </div>
+  <div class="row">
+    {{#link-to "users" (query-params interests='yoga')}}
+    <div class="col-md-4 interest-box yoga-button">
+      <img src="/assets/images/yoga@2x.png" class="button-image-large"/>
+        <span>Yoga</span>
+    </div>
+  {{/link-to}}
+    {{#link-to "users" (query-params interests='cycling')}}
+    <div class="col-md-4 interest-box dancing-button">
+      <img src="/assets/images/dancing@2x.png" class="button-image-large"/>
+        <span>Dancing</span>
+    </div>
+  {{/link-to}}
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>

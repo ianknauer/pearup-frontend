@@ -1,0 +1,17 @@
+{{#bs-dropdown direction="down" tagName="span" as |dd|}}
+  {{#dd.toggle}}Modify<span class="caret"></span>{{/dd.toggle}}
+  {{#dd.menu align="left" as |menu|}}
+    {{#menu.item}}
+      {{#link-to "users" (query-params language=null)}}All{{/link-to}}
+    {{/menu.item}}
+    {{#menu.item}}
+      {{#link-to "users" (query-params language="english")}}English{{/link-to}}
+    {{/menu.item}}
+    {{#menu.item}}
+      {{#link-to "users" (query-params language="french")}}French{{/link-to}}
+    {{/menu.item}}
+    {{#menu.item}}
+      {{#link-to "users" (query-params language="german")}}German{{/link-to}}
+    {{/menu.item}}
+  {{/dd.menu}}
+{{/bs-dropdown}}

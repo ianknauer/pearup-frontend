@@ -1,5 +1,45 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<div class="v-container">
+  <div class="flex-box-container">
+    <main>
 
-{{outlet}}
+    <nav class="navy navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="/" class="external nav">
+            <img src="/assets/images/logo@3x.png" class="logo" />
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li>
+                {{#link-to "profile"}}
+                  <img src="/assets/images/profile@3x.png" class="profile" />
+                {{/link-to}}
+              </li>
+              <li>
+                <img src="/assets/images/settings@3x.png" class="settings" />
+              </li>
+              <li>
+                <a {{action "viewMessages"}} href="" style="padding: 0;" id="simple-menu">
+                    <img src="/assets/images/chat@3x.png" class="chat" />
+                </a>
+                <span class="notification-alert">2</span>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    {{outlet}}
+    </main>
+    {{#from-elsewhere name="tools" as |tools|}}
+      <div class="topbar">
+        {{#liquid-bind tools rules=toolsAnimationRules as |t|}}
+          {{component t}}
+        {{/liquid-bind}}
+      </div>
+    {{/from-elsewhere}}
+  </div>
+</div>

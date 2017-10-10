@@ -1,0 +1,14 @@
+{{#bs-dropdown direction="down" tagName="span" as |dd|}}
+  {{#dd.toggle}}Modify<span class="caret"></span>{{/dd.toggle}}
+  {{#dd.menu align="left" as |menu|}}
+    {{#menu.item}}
+      {{#link-to "users" (query-params gender=null)}}All{{/link-to}}
+    {{/menu.item}}
+    {{#menu.item}}
+      {{#link-to "users" (query-params gender="female")}}Female{{/link-to}}
+    {{/menu.item}}
+    {{#menu.item}}
+      {{#link-to "users" (query-params gender="male")}}Male{{/link-to}}
+    {{/menu.item}}
+  {{/dd.menu}}
+{{/bs-dropdown}}

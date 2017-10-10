@@ -1,0 +1,17 @@
+{{#bs-dropdown direction="down" tagName="span" as |dd|}}
+  {{#dd.toggle}}Modify<span class="caret"></span>{{/dd.toggle}}
+  {{#dd.menu align="left" as |menu|}}
+    {{#menu.item}}
+      {{#link-to "users" (query-params city=null)}}All{{/link-to}}
+    {{/menu.item}}
+    {{#menu.item}}
+      {{#link-to "users" (query-params city="Vancouver")}}Vancouver{{/link-to}}
+    {{/menu.item}}
+    {{#menu.item}}
+      {{#link-to "users" (query-params city="Richmond")}}Richmond{{/link-to}}
+    {{/menu.item}}
+    {{#menu.item}}
+      {{#link-to "users" (query-params city="Burnaby")}}Burnaby{{/link-to}}
+    {{/menu.item}}
+  {{/dd.menu}}
+{{/bs-dropdown}}

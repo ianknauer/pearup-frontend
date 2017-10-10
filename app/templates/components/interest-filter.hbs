@@ -1,0 +1,16 @@
+<img src="/assets/images/white-tag.png" class="add-button" />
+
+{{#if isShowingPopup}}
+  {{#tether-dialog
+    target=".add-button"
+    container-class="Popup panel panel-default interests-modal"
+    targetAttachment="middle right"
+    attachment="middle left"}}
+
+    {{#each Interests as |interest|}}
+        <li><a {{action (action buttonClick interest)}}>{{interest}}</a></li>
+    {{/each}}
+
+
+  {{/tether-dialog}}
+{{/if}}

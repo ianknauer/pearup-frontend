@@ -1,0 +1,18 @@
+<div class="Colour Square btn btn-default" style="background-color: {{currentColour}}">
+</div>
+
+{{#if isShowingPopup}}
+  {{#tether-dialog
+    target=".Colour"
+    container-class="Popup panel panel-default"
+    targetAttachment="middle right"
+    attachment="top left"}}
+
+    {{#each colors as |color|}}
+      <a class="Bar panel-body" style="background-color: {{color}};"
+        {{action on-change=color}}>
+      </a>
+    {{/each}}
+
+  {{/tether-dialog}}
+{{/if}}
