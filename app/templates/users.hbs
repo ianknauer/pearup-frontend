@@ -24,47 +24,7 @@
       </div>
 
       {{#each filteredUsers as |user|}}
-      <div class="container volunteer-profile">
-        <div class="row">
-          <div class="col-md-3 volunteer-left-column">
-            <img src="{{user.avatar}}" alt="" style="width: 100%">
-            <span><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>{{user.city}}, {{user.country}}</span>
-          </div>
-          <div class="col-md-9 volunteer-right-column">
-            <h1>{{user.name}}</h1>
-            <h4>{{user.gender}}</h4>
-            <p class="profile-description">{{user.biography}}</p>
-            <div class="line"></div>
-
-              <div class="row">
-
-                <div class="col-md-6">
-                  <p>INTERESTS</P>
-                    <ul class="interests">
-                    {{#each user.interests as |interest|}}
-                        <li>{{interest.name}}</li>
-                    {{/each}}
-                  </ul>
-                </div>
-
-                <div class="col-md-6">
-                  <p>I CAN HELP WITH</p>
-                  <ul class="help-with">
-                    <li>Dog Walking</li>
-                  </ul>
-                </div>
-
-            </div>
-
-              <p>HIGHLIGHT REVIEW</p>
-              <div class="review">
-                <blockquote class="blockquote">
-                  <p class='mb-0'>{{user.review}}</p>
-                </blockquote>
-              </div>
-          </div>
-        </div>
-      </div>
+        {{profile-results user=user}}
       {{else}}
         <h1>Nobody matched your search! Try changing your parameters and trying again!</h1>
       {{/each}}
