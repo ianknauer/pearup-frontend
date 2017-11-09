@@ -1,4 +1,4 @@
-<div class="v-container">
+{{!-- <div class="v-container">
   <div class="flex-box-container">
     <main>
 
@@ -30,10 +30,10 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav> --}}
 
     {{outlet}}
-    </main>
+    {{!-- </main>
     {{#from-elsewhere name="tools" as |tools|}}
       <div class="topbar">
         {{#liquid-bind tools rules=toolsAnimationRules as |t|}}
@@ -42,4 +42,46 @@
       </div>
     {{/from-elsewhere}}
   </div>
-</div>
+</div> --}}
+
+<nav class="navbar is-transparent">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <span>© 2017 Pear Up, Inc. </span>
+    </a>
+  </div>
+
+
+  <div id="navbar" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="#">
+        Terms
+      </a>
+      <a class="navbar-item" href="#">
+        Privacy
+      </a>
+      <a class="navbar-item" href="#">
+        Security
+      </a>
+      <a class="navbar-item" href="#">
+        Help
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <a class="control">
+            <img src="/assets/images/twitter-icon.png" />
+          </a>
+          <a class="control">
+            <img src="/assets/images/instagram-icon.png" />
+          </a>
+          <a class="control">
+            <img src="/assets/images/facebook-icon.png" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -10,8 +10,9 @@ Router.map(function() {
   this.route('users', function(){
     this.route('messages');
   });
-  this.route('interests', { path: "/" });
   this.route('profile', {path: "/profile"});
+
+  this.route('freestyle');
 });
 
 export default Router;

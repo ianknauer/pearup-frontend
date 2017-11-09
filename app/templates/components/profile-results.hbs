@@ -1,5 +1,15 @@
-<div class="container">
-  <div class="row">
+{{#bulma-container isFluid=true}}
+
+ <div class="columns">
+  <div class="column is-one-third">
+    First column
+  </div>
+  <div class="column">
+    Second column
+  </div>
+</div>
+
+  {{!-- <div class="row">
     <div class="col-md-3 volunteer-left-column">
       <img src="{{user.avatar}}" alt="" style="width: 100%">
       <span><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>{{user.city}}, {{user.country}}</span>
@@ -39,5 +49,6 @@
           </blockquote>
         </div>
     </div>
-  </div>
-</div>
+  </div> --}}
+
+{{/bulma-container}}
