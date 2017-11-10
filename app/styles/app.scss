@@ -1,6 +1,6 @@
 @import "colors";
-@import "overrides";
 @import "bulma";
+@import "overrides";
 @import "mixins";
 
 .landing-logo {
@@ -66,5 +66,8 @@
       padding-bottom: 10rem;
       padding-top: 10rem;
   }
+}
 
+.is-welcome-header {
+  margin-bottom: 20px;
 }
