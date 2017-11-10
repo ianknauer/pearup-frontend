@@ -1,21 +1,33 @@
 <div class="columns home-features">
 
  <article class="message is-featured column is-4 is-offset-4">
-   <h1 class="is-size-3 has-text-weight-bold has-text-primary is-welcome-header">Welcome back!</h1>
+   <h1 class="is-size-3 has-text-weight-bold has-text-primary is-welcome-header">Welcome to <span class="not-bold has-text-weight-light has-text-black-bis">PearUp</span>!</h1>
 
    <div class="message-body">
+     <div class="columns">
+     <div class="column is-10 is-offset-1">
      <div class="field">
-      <label class="label" for="email">E-mail</label>
-      {{input value="" id="email" placeholder="email@pearup.com" class="input"}}
+      <label class="label" for="name">Name *</label>
+      {{input value="" id="name" placeholder="Full name" class="input"}}
     </div>
     <div class="field">
-      <label class="label" for="password">Password</label>
-      {{input value="" id="password" placeholder="********" class="input"}}
-      <p><span class="help">Forgot my password</span></p>
+      <label class="label" for="address">Address *</label>
+      {{input value="" id="address" placeholder="123 example st" class="input"}}
     </div>
+    <div class="field">
+     <label class="label" for="email">E-mail *</label>
+     {{input value="" id="email" placeholder="email@pearup.com" class="input"}}
+   </div>
+   <div class="field">
+     <label class="label" for="password">Password *</label>
+     {{input value="" id="password" placeholder="********" class="input"}}
+     <p><span class="help">*Required fields</span></p>
+   </div>
     <div class="field is-grouped columns is-centered">
       <div class="control column is-8 is-offset-2"><br />
         <a class="button is-warning is-medium is-super-warning">Login</a>
+      </div>
+    </div>
       </div>
     </div>
 
