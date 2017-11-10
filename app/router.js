@@ -13,6 +13,8 @@ Router.map(function() {
   this.route('profile', {path: "/profile"});
 
   this.route('freestyle');
+  this.route('login');
+  this.route('sign-up');
 });
 
 export default Router;
