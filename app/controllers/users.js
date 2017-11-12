@@ -1,6 +1,10 @@
 import Ember from 'ember';
+import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
-export default Ember.Controller.extend({
+const { service } = Ember.inject;
+
+export default Ember.Controller.extend( AuthenticatedRouteMixin, {
+  session: service('session'),
   queryParams: ['gender', 'language', 'location', 'interests'],
   gender: null,
   language: null,
@@ -24,8 +28,6 @@ export default Ember.Controller.extend({
     let search6 = []
     let search7 = []
     let newArray = []
-
-    console.log(interests);
 
     if (!Ember.isEmpty(interests)) {
       let inters = interests.split(",");
