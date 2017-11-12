@@ -3,5 +3,31 @@
   border-color: #DBDBDB;
   height: 1.5em;
   font-size: 0.8em;
+}
 
+.navbar-item img {
+    max-height: 3.5rem!important;
+}
+
+.navbar-end {
+  margin-right: 0px!important;
+}
+
+.navbar-dropdown {
+  border-top: none;
+  box-shadow: none;
+  background-color: rgba(0,0,0,0);
+  padding-top: 15px;
+}
+
+.navbar-dropdown .navbar-item {
+  border-bottom: 1px solid $primary;
+}
+
+.navbar-dropdown .navbar-item:last-of-type {
+  border-bottom: none;
+}
+
+.navbar-dropdown a.navbar-item {
+  padding-right: 0px;
 }

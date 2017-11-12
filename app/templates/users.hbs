@@ -1,11 +1,70 @@
-<div class="container">
+<nav class="navbar is-transparent nav-header">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="/assets/images/Logo_icon_banner.png" alt="" height="79">
+    </a>
+    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="top-navbar" class="navbar-menu">
+    <div class="navbar-start">
+
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="button is-primary is-outlined" target="_blank">
+              <span>
+                Events
+              </span>
+            </a>
+            <a class="button is-primary is-outlined" target="_blank">
+              <span>
+                Message
+              </span>
+            </a>
+          </p>
+          <p class="control">
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link" href="/documentation/overview/start/">
+                Profile
+              </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="/documentation/overview/start/">
+                  Edit Profile
+                </a>
+                <a class="navbar-item" href="">
+                  My Recipes
+                </a>
+                <a class="navbar-item" href="">
+                  My Account
+                </a>
+                <a {{action "logout"}} class="navbar-item">
+                  Logout
+                </a>
+              </div>
+            </div>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+{{!-- <div class="container">
   <div class="row profile-list">
     <div class="col-12 volunteer-list">
       <p class="back-button">
         <img src="/assets/images/back.png" class="back-icon" />
       </p>
 
-      {{!-- {{currentInterests}} --}}
+    
       <div class="interests-block row">
         {{#each currentInterests as |interest|}}
           <div class="col-md-3 search-interest-box hiking-button">
@@ -53,6 +112,6 @@
       </div>
     </div>
   </div>
-</div>
+</div> --}}
 
 {{outlet}}
