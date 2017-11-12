@@ -9,7 +9,9 @@
        <div class="columns">
          <div class="columns column is-4 is-offset-4">
           <div class="column">
-            <a class="button is-warning is-medium">Sign In</a>
+            {{#link-to 'sign-up' class="button is-warning is-medium"}}
+            Sign Up
+            {{/link-to}}
           </div>
           <div class="column">
             {{#link-to 'login' class="button is-warning is-medium"}}

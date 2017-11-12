@@ -1,31 +1,35 @@
-<div class="columns home-features">
+<section class="hero is-fullheight">
+<div class="hero-body">
+  <div class="container container-box has-text-centered home-features">
+     <article class="message is-featured">
+       <h1 class="is-size-3 has-text-weight-bold has-text-primary is-welcome-header">Welcome back!</h1>
 
- <article class="message is-featured column is-4 is-offset-4">
-   <h1 class="is-size-3 has-text-weight-bold has-text-primary is-welcome-header">Welcome back!</h1>
-
-   <div class="message-body">
-     <div class="columns">
-       <form {{action "authenticate" on="submit"}} class="column is-10 is-offset-1">
-         <div class="field">
-           <label class="label" for="email">E-mail</label>
-           {{input value=email id="email" placeholder="email@pearup.com" class="input"}}
-         </div>
-         <div class="field">
-           <label class="label" for="password">Password</label>
-           {{input type="password" value=password id="password" placeholder="********" class="input"}}
-           <p><span class="help">Forgot my password</span></p>
-         </div>
-         <div class="field is-grouped columns is-centered">
-           <div class="control column is-8 is-offset-2"><br />
-             <button type="submit" class="button is-warning is-medium is-super-warning">Login</button>
-           </div>
+         <div class="columns">
+           <form {{action "authenticate" on="submit"}} class="column is-4 is-offset-4 message-body">
+             <div class="columns">
+               <div class="column is-10 is-offset-1">
+                 <div class="field">
+                   <label class="label" for="email">E-mail</label>
+                   {{input value=email id="email" placeholder="email@pearup.com" class="input"}}
+                 </div>
+                 <div class="field">
+                   <label class="label" for="password">Password</label>
+                   {{input type="password" value=password id="password" placeholder="********" class="input"}}
+                   <p><span class="help">Forgot my password</span></p>
+                 </div>
+                 <div class="field is-grouped columns is-centered">
+                   <div class="control column is-6 is-offset-1"><br />
+                     <button type="submit" class="button is-warning is-medium is-super-warning">Login</button>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          {{#if errorMessage}}
+            {{errorMessage}}
+          {{/if}}
         </div>
-      </form>
-
-      {{#if errorMessage}}
-        {{errorMessage}}
-      {{/if}}
-    </div>
+     </article>
   </div>
- </article>
 </div>
+</section>
