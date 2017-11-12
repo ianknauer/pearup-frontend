@@ -2,6 +2,7 @@
 @import "bulma";
 @import "overrides";
 @import "mixins";
+@import "pod-styles";
 
 .landing-logo {
   height: 223px;
@@ -66,8 +67,4 @@
       padding-bottom: 10rem;
       padding-top: 10rem;
   }
-}
-
-.is-welcome-header {
-  margin-bottom: 20px;
 }
