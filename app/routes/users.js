@@ -3,7 +3,7 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 
 const { service } = Ember.inject;
 
-export default Ember.Route.extend( AuthenticatedRouteMixin, {
+export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
   session: service('session'),
 
@@ -29,7 +29,7 @@ export default Ember.Route.extend( AuthenticatedRouteMixin, {
   },
 
   model(params) {
-    return this.store.findAll('user', {include: 'interests'});
+    return this.store.findAll('user');
   },
 
   actions: {
