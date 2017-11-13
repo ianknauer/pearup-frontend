@@ -16,12 +16,10 @@
     "test": "ember test"
   },
   "devDependencies": {
-    "bootstrap-sass": "^3.3.7",
     "broccoli-asset-rev": "^2.4.5",
-    "bulma": "^0.5.3",
+    "bulma": "^0.6.1",
     "ember-ajax": "^3.0.0",
     "ember-awesome-macros": "^0.40.0",
-    "ember-bootstrap-power-select": "^1.0.0-alpha.1",
     "ember-bulma": "^0.4.1",
     "ember-cli": "~2.15.1",
     "ember-cli-app-version": "^3.0.0",
@@ -50,6 +48,7 @@
     "ember-power-select": "^1.9.7",
     "ember-power-select-blockless": "^0.3.1",
     "ember-resolver": "^4.0.0",
+    "ember-simple-auth": "^1.4.0",
     "ember-source": "~2.15.0",
     "ember-tether": "^1.0.0-beta.0",
     "ember-truncate": "^0.3.0",

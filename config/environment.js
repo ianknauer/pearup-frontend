@@ -11,11 +11,17 @@ module.exports = function(environment) {
       'Raleway'
     ],
 
+    'ember-simple-auth': {
+      routeAfterAuthentication: 'users',
+      routeIfAlreadyAuthenticated: 'users'
+    },
+
     contentSecurityPolicy: {
       'font-src': "'self' fonts.gstatic.com",
-      'style-src': "'self' fonts.googleapis.com"
+      'style-src': "'self' fonts.googleapis.com",
+      'connect-src': "localhost:3000",
     },
-    
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -32,6 +38,9 @@ module.exports = function(environment) {
       // when it is created
     }
   };
+
+
+
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
