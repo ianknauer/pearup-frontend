@@ -40,3 +40,19 @@
 .label, .help {
   text-align: left;
 }
+
+.has-colored-border {
+  border: 2px solid $primary;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.reviews {
+  padding-right: 10px;
+  min-height: 200px;
+}
+
+.textarea:not([rows]) {
+    max-height: 600px;
+    min-height: 150px;
+}

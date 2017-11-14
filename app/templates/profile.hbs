@@ -1,64 +1,61 @@
-<style>
- .navy{
-   background-color: #f5f5f5!important;
-   background-image: none;
-   height: 180px;
- }
-
-</style>
-
-<div class="container">
-  <div class="row profile-body">
-    <div class="col-md-4">
-      <img src="/assets/images/new-av.png" class="profile-image">
-      <p><span>
-        <img src="/assets/images/icon-location.png" class="location-icon"></span> Vancouver, Canada</p>
+<nav class="navbar is-transparent nav-header">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="/assets/images/Logo_icon_banner.png" alt="" height="79">
+    </a>
+    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-    <div class="col-md-8">
-      <p class="profile-text">
-        MY PROFILE
-      </p>
-      <h1 class="profile-header">Donald Ive</h1>
-      <p class="edit"><a href="#">Edit</a></p>
-      <p class='profile-gender'>
-        Male <br />
-      </p>
-      <p class='profile-biography'>
-        Retired photographer and documentary filmmaker.<br />
-      </p>
+  </div>
 
-      <div class="line">
-      </div>
+  <div id="top-navbar" class="navbar-menu">
+    <div class="navbar-start">
 
-      <p class="interests-text">INTERESTS</p>
-        <button type="button" class="btn btn-success">
-          <img src="assets/images/hiking.png" class="hiking-icon" /> biking
-        </button>
-        <button type="button" class="btn btn-success">
-          <img src="assets/images/hiking.png" class="hiking-icon" /> photography
-        </button>
-        <button type="button" class="btn btn-success">
-          <img src="assets/images/hiking.png" class="hiking-icon" /> filming
-        </button>
-        <img src="/assets/images/tag-add.png" class="add-button"><br />
-      <div class="line needs-line">
-      </div>
+    </div>
 
-      <p class="needs-text">NEEDS</p>
-      <button type="button" class="btn btn-success btn-needs">
-        <img src="assets/images/hiking.png" class="hiking-icon" /> talk
-      </button>
-      <button type="button" class="btn btn-success btn-needs">
-        <img src="assets/images/hiking.png" class="hiking-icon" /> chores
-      </button>
-      <img src="/assets/images/tag-add.png" class="add-button"><br />
-      {{!-- <% @user.needs.each do |need| %> --}}
-        {{!-- <button type="button" class="btn btn-success btn-needs"><%= image_tag "hiking.png", class: "hiking-icon" %><%= need.name %></button> --}}
-      {{!-- <% end %> --}}
-
-      {{!-- <%= image_tag "tag-add.png", class: "add-button" %> <br /> --}}
-      <div class="line needs-line">
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="button is-primary is-outlined" target="_blank">
+              <span>
+                Events
+              </span>
+            </a>
+            <a class="button is-primary is-outlined" target="_blank">
+              <span>
+                Message
+              </span>
+            </a>
+          </p>
+          <p class="control">
+            <div class="navbar-item has-dropdown is-hoverable">
+              {{link-to "Profile" "profile" class="navbar-link"}}
+              {{!-- <a class="navbar-link" href="/documentation/overview/start/">
+                Profile
+              </a> --}}
+              <div class="navbar-dropdown">
+                {{#link-to 'profile.edit' class="navbar-item"}}
+                  Edit Profile
+                {{/link-to}}
+                <a class="navbar-item" href="">
+                  My Recipes
+                </a>
+                <a class="navbar-item" href="">
+                  My Account
+                </a>
+                <a {{action "logout"}} class="navbar-item">
+                  Logout
+                </a>
+              </div>
+            </div>
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</nav>
+
+{{outlet}}
