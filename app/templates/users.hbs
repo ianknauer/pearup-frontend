@@ -33,17 +33,14 @@
           <p class="control">
             <div class="navbar-item has-dropdown is-hoverable">
               {{link-to "Profile" "profile" class="navbar-link"}}
-              {{!-- <a class="navbar-link" href="/documentation/overview/start/">
-                Profile
-              </a> --}}
               <div class="navbar-dropdown">
                 {{#link-to 'profile.edit' class="navbar-item"}}
                   Edit Profile
                 {{/link-to}}
-                <a class="navbar-item" href="">
+                <a class="navbar-item">
                   My Recipes
                 </a>
-                <a class="navbar-item" href="">
+                <a class="navbar-item">
                   My Account
                 </a>
                 <a {{action "logout"}} class="navbar-item">
