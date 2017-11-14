@@ -19,7 +19,7 @@ module.exports = function(environment) {
     contentSecurityPolicy: {
       'font-src': "'self' fonts.gstatic.com",
       'style-src': "'self' fonts.googleapis.com",
-      'connect-src': "localhost:3000 http://pearup.nanoapp.io",
+      'connect-src': "http://pearup.nanoapp.io",
     },
 
     EmberENV: {
