@@ -20,7 +20,7 @@
 }
 
 .has-landing-background {
-  @include transparent_bg("/assets/images/landing-background.png", 0.68, #fff);
+  @include transparent_bg("/assets/images/landing-background.jpg", 0.68, #fff);
   background-size: cover;
 }
 
