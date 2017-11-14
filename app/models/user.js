@@ -5,6 +5,7 @@ export default DS.Model.extend(HasManyQuery.ModelMixin, {
   name: DS.attr(),
   age: DS.attr(),
   email: DS.attr(),
+  specialty: DS.attr(),
   username: DS.attr(),
   address: DS.attr(),
   password: DS.attr(),

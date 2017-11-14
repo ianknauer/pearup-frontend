@@ -36,9 +36,5 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     viewMessages() {
       this.transitionTo('users.messages');
     },
-
-    logout() {
-      this.get("session").invalidate();
-    }
   }
 });
