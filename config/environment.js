@@ -12,8 +12,8 @@ module.exports = function(environment) {
     ],
 
     'ember-simple-auth': {
-      routeAfterAuthentication: 'users',
-      routeIfAlreadyAuthenticated: 'users'
+      routeAfterAuthentication: 'events',
+      routeIfAlreadyAuthenticated: 'events'
     },
 
     contentSecurityPolicy: {

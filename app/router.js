@@ -10,6 +10,9 @@ Router.map(function() {
   this.route('users', function(){;
     this.route('messages');
   });
+
+  this.route('events', function(){});
+
   this.route('profile', {path: "/profile"}, function(){
     this.route('edit', {});
   });
