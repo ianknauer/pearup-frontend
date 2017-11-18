@@ -4,7 +4,7 @@ import HasManyQuery from 'ember-data-has-many-query';
 import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 
 export default DS.JSONAPIAdapter.extend(HasManyQuery.RESTAdapterMixin, DataAdapterMixin, {
-  host: 'http://pearup.nanoapp.io',
+  host: 'http://localhost:3000',
 
   namespace: 'api/v1',
 

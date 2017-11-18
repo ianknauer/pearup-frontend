@@ -9,7 +9,7 @@ export default DS.Model.extend(HasManyQuery.ModelMixin, {
   username: DS.attr(),
   address: DS.attr(),
   password: DS.attr(),
-  avatar: DS.attr(),
+  image: DS.attr(),
   gender: DS.attr(),
   height: DS.attr(),
   description: DS.attr(),

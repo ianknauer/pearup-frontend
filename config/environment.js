@@ -20,6 +20,7 @@ module.exports = function(environment) {
       'font-src': "'self' fonts.gstatic.com",
       'style-src': "'self' fonts.googleapis.com",
       'connect-src': "http://pearup.nanoapp.io",
+      'img-src': "'self' data:"
     },
 
     EmberENV: {
