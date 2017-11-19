@@ -19,4 +19,5 @@ export default DS.Model.extend(HasManyQuery.ModelMixin, {
   review: DS.attr(),
   language: DS.attr(),
   interests: DS.hasMany('interest'),
+  events: DS.hasMany('events'),
 });

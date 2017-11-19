@@ -14,6 +14,7 @@ Router.map(function() {
     this.route('edit', {});
   });
 
+  this.route('events', function(){});
   this.route('login');
   this.route('sign-up');
 });
