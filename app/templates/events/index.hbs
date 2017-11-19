@@ -1,1 +1,9 @@
-{{home-featured events=sessionUser.user.events}}
+{{!-- {{home-featured events=sessionUser.user.events}} --}}
+
+{{#each model as |event|}}
+  <p>{{event.name}}</p>
+  <p>{{event.description}}</p>
+  <p>{{event.ingredients}}</p>
+  <p>{{event.spots}}</p>
+  <p>{{event.dish}}</p>
+{{/each}}
