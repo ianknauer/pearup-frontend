@@ -7,14 +7,21 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+
   this.route('users', function(){;
     this.route('messages');
   });
+
   this.route('profile', {path: "/profile"}, function(){
     this.route('edit', {});
   });
 
-  this.route('events', function(){});
+  this.route('events', function(){
+    this.route('new');
+    this.route('show', {path: "/:event_id"});
+    this.route('edit', {path: "/:event_id/edit"});
+  });
+
   this.route('login');
   this.route('sign-up');
 });

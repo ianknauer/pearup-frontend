@@ -1,9 +1,64 @@
-{{!-- {{home-featured events=sessionUser.user.events}} --}}
+{{#link-to "events" (query-params distance="5")}}0-5{{/link-to}}
+{{#link-to "events" (query-params distance="15")}}6-15{{/link-to}}
+{{#link-to "events" (query-params distance="25")}}16-25{{/link-to}}
+
 
 {{#each model as |event|}}
-  <p>{{event.name}}</p>
-  <p>{{event.description}}</p>
-  <p>{{event.ingredients}}</p>
-  <p>{{event.spots}}</p>
-  <p>{{event.dish}}</p>
+  <div class="section">
+    <div class="container">
+      {{event.name}}
+
+      <div class="columns is-2">
+        <div class="column is-10 is-offset-1 columns">
+          <div class="column is-3 has-colored-border first-row push-left">
+            <p class="no-reviews has-text-grey-light" style="padding-left: 50px; padding-top: 10px">Click to <br /> add a picture</p>
+          </div>
+            <div class="column is-9 has-colored-border first-row">
+              <div class="columns">
+                <div class="column is-2">
+                  <div class="field" for="dish">
+                    <label class="label">Instructor</label>
+                    <p>Donald Ive</p>
+                  </div>
+                  <div class="field">
+                    <label class="label" for="city">Class Location</label>
+                    <p>Coquitlam, BC</p>
+                  </div>
+                  <div class="field" for="dish">
+                    <label class="label">Class Dish</label>
+                    {{event.dish}}
+                  </div>
+               </div>
+               <div class="column is-2">
+                 <div class="field" for="Date">
+                   <label class="label">Date</label>
+                   <p>11/04/2017</p>
+                 </div>
+                 <div class="field">
+                   <label class="label" for="city">Time</label>
+                   <p>2-5PM</p>
+                 </div>
+                 <div class="field">
+                   <label class="label" for="spots">Spots</label>
+                   {{event.spots}}
+                 </div>
+              </div>
+               <div class="column is-4">
+                 <div class="field">
+                   <label class="label" for="description">Description</label>
+                   <p>{{event.description}}</p>
+                 </div>
+              </div>
+              <div class="column is-4">
+                <div class="field">
+                  <label class="label" for="ingredients">What to bring</label>
+                  <p>{{event.ingredients}}</p>
+                </div>
+             </div>
+             </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 {{/each}}

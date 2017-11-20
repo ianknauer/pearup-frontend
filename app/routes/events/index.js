@@ -9,11 +9,16 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
   sessionUser: Ember.inject.service('session-user'),
 
-  model(params) {
-    return this.store.findAll('event').then(function(events) {
-      return rejectFromCollectionByValue('events', 'user.id', 1);
-    });
-
+  queryParams: {
+    distance: {
+      refreshModel: true
+    }
   },
+
+  model(params) {
+    return this.get('store').query('event', { filter: { distance: params.distance } });
+  }
+
+
 
 });
