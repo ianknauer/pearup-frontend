@@ -2,6 +2,13 @@
 {{#link-to "events" (query-params distance="15")}}6-15{{/link-to}}
 {{#link-to "events" (query-params distance="25")}}16-25{{/link-to}}
 
+<p>Hello, {{sessionUser.user.name}} </p>
+
+<button type="button" {{action 'getUserLocation'}}>Geolocate me!</button>
+{{#if userLocation}}
+  {{userLocation}}
+{{/if}}
+
 
 {{#each model as |event|}}
   <div class="section">
