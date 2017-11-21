@@ -1,0 +1,6 @@
+{
+  "name": "pearup-frontend",
+  "dependencies": {
+    "cloudinary-jquery-file-upload": "^2.0.6"
+  }
+}
