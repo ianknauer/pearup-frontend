@@ -1,0 +1,81 @@
+<section class="hero is-large">
+  <div class="hero-body">
+    <div class="container">
+
+      <form class="section">
+        <div class="container columns">
+          <div class="container column is-6 is-offset-3">
+            <div class="has-text-centered has-green-border">
+              <h1 class="has-text-weight-bold is-size-3">{{model.name}}</h1>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+
+
+
+
+          <div class="columns is-2">
+            <div class="column is-10 is-offset-1 columns">
+              <div class="column is-3 has-colored-border first-row push-left">
+                <img src="{{model.pic}}" />
+              </div>
+                <div class="column is-9 has-colored-border first-row">
+                  <div class="columns">
+                    <div class="column is-2">
+                      <div class="field" for="dish">
+                        <label class="label">Instructor</label>
+                        <p>{{model.instructor}}</p>
+                      </div>
+                      <div class="field">
+                        <label class="label" for="city">Class Location</label>
+                        <p>Coquitlam, BC</p>
+                      </div>
+                      <div class="field" for="dish">
+                        <label class="label">Class Dish</label>
+                        {{model.dish}}
+                      </div>
+                   </div>
+                   <div class="column is-2">
+                     <div class="field" for="Date">
+                       <label class="label">Date</label>
+                       <p>11/04/2017</p>
+                     </div>
+                     <div class="field">
+                       <label class="label" for="city">Time</label>
+                       <p>2-5PM</p>
+                     </div>
+                     <div class="field">
+                       <label class="label" for="spots">Spots</label>
+                       {{model.spots}}
+                     </div>
+                  </div>
+                   <div class="column is-4">
+                     <div class="field">
+                       <label class="label" for="description">Description</label>
+                       <p>{{model.description}}</p>
+                     </div>
+                  </div>
+                  <div class="column is-4">
+                    <div class="field">
+                      <label class="label" for="ingredients">What to bring</label>
+                      <p>{{model.ingredients}}</p>
+                    </div>
+                 </div>
+                 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      <div class="field is-grouped columns is-centered">
+        <div class="control"><br />
+          <button type="submit" {{action "save"}} class="button is-warning is-medium is-super-warning">Participate</button>
+          <button type="submit" class="button is-warning is-medium is-super-warning">Message</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,8 +1,8 @@
 <nav class="navbar is-transparent nav-header">
   <div class="navbar-brand">
-    <a class="navbar-item" href="/">
+    {{#link-to 'events' class="navbar-item"}}
       <img src="/assets/images/Logo_icon_banner.png" alt="" height="79">
-    </a>
+    {{/link-to}}
     <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
       <span></span>
       <span></span>
@@ -19,11 +19,19 @@
       <div class="navbar-item">
         <div class="field is-grouped">
           <p class="control">
-            <a class="button is-primary is-outlined" target="_blank">
-              <span>
-                Events
-              </span>
-            </a>
+            <div class="navbar-item has-dropdown is-hoverable">
+              {{link-to "Events" "events" class=" button is-primary is-outlined"}}
+              <div class="navbar-dropdown events-dropdown events-navbar-dropdown">
+                {{#link-to 'events' class="navbar-item events-navbar-item"}}
+                  Find Events
+                {{/link-to}}
+                {{#link-to 'events.new' class="navbar-item events-navbar-item"}}
+                  Create Event
+                {{/link-to}}
+              </div>
+            </div>
+          </p>
+          <p class="control">
             <a class="button is-primary is-outlined" target="_blank">
               <span>
                 Message
@@ -48,62 +56,5 @@
     </div>
   </div>
 </nav>
-
-{{!-- <div class="container">
-  <div class="row profile-list">
-    <div class="col-12 volunteer-list">
-      <p class="back-button">
-        <img src="/assets/images/back.png" class="back-icon" />
-      </p>
-
-
-      <div class="interests-block row">
-        {{#each currentInterests as |interest|}}
-          <div class="col-md-3 search-interest-box hiking-button">
-            <img src="/assets/images/{{interest}}@2x.png" class="hiker-logo" />
-            <span>{{interest}}</span>
-            <button {{action 'removeInterest' interest}} type="button" class="close" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-      {{/each}}
-
-      {{interest-filter buttonClick=(action "buttonClick" interest=interest)}}
-    </div>
-
-      <div class="white-line">
-      </div>
-
-      {{#each filteredUsers as |user|}}
-        {{profile-results user=user}}
-      {{else}}
-        <h1>Nobody matched your search! Try changing your parameters and trying again!</h1>
-      {{/each}}
-
-    </div>
-  </div>
-</div>
-
-<div class="Rectangle-4b">
-  <div class="container">
-    <div class="row footer-slider-row">
-      <div class="col-md-4 footer-slider">
-        <font color = #cecece> LOCATION</font> <br /><br />
-        <font color = #282828> {{if city city "all"}}</font> <br />
-        {{location-picker}}
-      </div>
-      <div class="col-md-4 footer-slider">
-        <font color = #cecece> LANGUAGE</font> <br /><br />
-        <font color = #282828> {{if language language "all"}}</font> <br />
-        {{language-picker}}
-      </div>
-      <div class="col-md-4 footer-slider-last">
-        <font color = #cecece> GENDER</font> <br /><br />
-        <font color = #282828>{{if gender gender "all"}}</font> <br />
-        {{gender-picker}}
-      </div>
-    </div>
-  </div>
-</div> --}}
 
 {{outlet}}

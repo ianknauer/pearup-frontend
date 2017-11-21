@@ -5,5 +5,4 @@ export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
   sessionUser: Ember.inject.service('session-user'),
 
-
 });

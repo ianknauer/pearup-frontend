@@ -12,14 +12,20 @@ module.exports = function(environment) {
     ],
 
     'ember-simple-auth': {
-      routeAfterAuthentication: 'users',
-      routeIfAlreadyAuthenticated: 'users'
+      routeAfterAuthentication: 'events',
+      routeIfAlreadyAuthenticated: 'events'
     },
 
     contentSecurityPolicy: {
       'font-src': "'self' fonts.gstatic.com",
       'style-src': "'self' fonts.googleapis.com",
       'connect-src': "http://pearup.nanoapp.io",
+    },
+
+    cloudinary: {
+      cloudName: "ianknauer",
+      apiKey: "951639588961451",
+      uploadPreset: "hoiqpidl",
     },
 
     EmberENV: {

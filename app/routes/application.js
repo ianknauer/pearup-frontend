@@ -6,8 +6,7 @@ const { service } = Ember.inject;
 export default Ember.Route.extend(ApplicationRouteMixin, {
 
     session: service('session'),
-
-
+    sessionUser: service('session-user'),
     actions: {
 
       logout() {

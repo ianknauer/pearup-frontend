@@ -1,71 +1,79 @@
-<div class="section">
-  <div class="container">
-    <div class="columns is-2">
-      <div class="column is-8 is-offset-2 columns">
-        <div class="column is-3 has-colored-border first-row push-left">
-            <p class="no-reviews has-text-grey-light" style="padding-left: 50px; padding-top: 10px">Click to <br /> add a picture</p>
-        </div>
-        <div class="column is-9 has-colored-border first-row" style="width: 73.5%">
-          <div class="columns">
-            <div class="column is-6">
-              <div class="field">
-                <label class="label">Name</label>
-                {{#if sessionUser.user.name}}
-                  {{sessionUser.user.name}}
-                {{else}}
-                <p class="has-text-grey-light">Please provide us with a name!</p>
-                {{/if}}
+<section class="hero is-large">
+  <div class="hero-body">
+    <div class="container">
+      <div class="section">
+        <div class="container">
+          <div class="columns is-2">
+            <div class="column is-8 is-offset-2 columns">
+              <div class="column is-3 has-colored-border first-row push-left">
+                <img src="{{sessionUser.user.pic}}" />
+                </div>
+              <div class="column is-9 has-colored-border first-row" style="width: 73.5%">
+                <div class="columns">
+                  <div class="column is-6">
+                    <div class="field">
+                      <label class="label">Name</label>
+                      {{#if sessionUser.user.name}}
+                        {{sessionUser.user.name}}
+                      {{else}}
+                      <p class="has-text-grey-light">Please provide us with a name!</p>
+                      {{/if}}
+                    </div>
+                    <div class="field">
+                      <label class="label">Location</label>
+                      {{#if sessionUser.user.city}}
+                        {{sessionUser.user.city}}
+                      {{else}}
+                      <p class="has-text-grey-light">Tell us where you live</p>
+                      {{/if}}
+                    </div>
+                    <div class="field">
+                      <label class="label">Specialty</label>
+                      {{#if sessionUser.user.specialty}}
+                        {{sessionUser.user.specialty}}
+                      {{else}}
+                      <p class="has-text-grey-light">Tell us your specialty</p>
+                      {{/if}}
+                    </div>
+                 </div>
+                 <div class="column is-6">
+                   <div class="field">
+                     <label class="label">Bio</label>
+                     {{#if sessionUser.user.specialty}}
+                       <p>{{sessionUser.user.biography}}</p>
+                     {{else}}
+                     <p class="has-text-grey-light">Tell us something about yourself!</p>
+                     {{/if}}
+                   </div>
+                </div>
+               </div>
               </div>
-              <div class="field">
-                <label class="label">Location</label>
-                {{#if sessionUser.user.city}}
-                  {{sessionUser.user.city}}
-                {{else}}
-                <p class="has-text-grey-light">Tell us where you live</p>
-                {{/if}}
-              </div>
-              <div class="field">
-                <label class="label">Specialty</label>
-                {{#if sessionUser.user.specialty}}
-                  {{sessionUser.user.specialty}}
-                {{else}}
-                <p class="has-text-grey-light">Tell us your specialty</p>
-                {{/if}}
-              </div>
-           </div>
-           <div class="column is-6">
-             <div class="field">
-               <label class="label">Bio</label>
-               {{#if sessionUser.user.specialty}}
-                 <p>{{sessionUser.user.biography}}</p>
-               {{else}}
-               <p class="has-text-grey-light">Tell us something about yourself!</p>
-               {{/if}}
-             </div>
-          </div>
-         </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="columns">
-      <div class="column is-8 is-offset-2 columns">
-        <div class="column is-12 has-colored-border reviews columns">
-          <label class="label">Reviews</label>
-            <div class="column is-5 is-offset-3">
-              <p class="no-reviews has-text-grey-light">No reviews yet! Creat an event and start your Pear Up experience!</p>
             </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="columns">
+            <div class="column is-8 is-offset-2 columns">
+              <div class="column is-12 has-colored-border reviews columns">
+                <label class="label">Reviews</label>
+                  <div class="column is-5 is-offset-3">
+                    <p class="no-reviews has-text-grey-light">No reviews yet! Creat an event and start your Pear Up experience!</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-grouped columns is-centered">
+        <div class="control"><br />
+          {{#link-to 'profile.edit'}}
+            <button type="submit" class="button is-warning is-medium is-super-warning">Edit</button>
+          {{/link-to}}
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="field is-grouped columns is-centered">
-  <div class="control"><br />
-    {{#link-to 'profile.edit'}}
-      <button type="submit" class="button is-warning is-medium is-super-warning">Edit</button>
-    {{/link-to}}
-  </div>
-</div>
+
+</section>

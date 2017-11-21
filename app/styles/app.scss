@@ -90,3 +90,45 @@
   margin-left: -10px;
   margin-right: 10px;
 }
+
+.upload-button {
+  padding-top: 110px;
+  padding-left: 45px;
+}
+
+.has-green-border {
+  border-bottom: 2px solid $primary;
+  margin-bottom: 25px;
+}
+
+.event-title-input {
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+}
+
+.is-event-header-inline {
+  margin-bottom: 20px;
+  border-bottom: 1px solid $primary;
+}
+
+.event-list-button {
+  margin-bottom: 10px;
+  min-width: 200px;
+}
+
+.my-events-header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.my-events-section {
+  border-bottom: 1px solid $primary;
+  margin: 0 30px;
+  margin-bottom: 40px;
+  padding-bottom: 60px;
+}
+
+.message-host {
+  padding-left: 0px;
+  padding-right: 0px;
+}
