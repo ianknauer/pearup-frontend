@@ -18,6 +18,7 @@ export default DS.Model.extend(HasManyQuery.ModelMixin, {
   biography: DS.attr(),
   city: DS.attr(),
   country: DS.attr(),
+  pic: DS.attr(),
   review: DS.attr(),
   language: DS.attr(),
   interests: DS.hasMany('interest'),

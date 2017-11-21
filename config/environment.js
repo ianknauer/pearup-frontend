@@ -22,6 +22,12 @@ module.exports = function(environment) {
       'connect-src': "http://pearup.nanoapp.io",
     },
 
+    cloudinary: {
+      cloudName: "ianknauer",
+      apiKey: "951639588961451",
+      uploadPreset: "hoiqpidl",
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
