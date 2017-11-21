@@ -1,11 +1,20 @@
 <form class="section">
+  <div class="container columns">
+    <div class="container column is-6 is-offset-3">
+      <div class="has-text-centered has-green-border">
+        <h1 class="has-text-weight-bold is-size-3">{{event.name}}</h1>
+      </div>
+    </div>
+  </div>
   <div class="container">
-    {{event.name}}
+
+
+
 
     <div class="columns is-2">
       <div class="column is-10 is-offset-1 columns">
         <div class="column is-3 has-colored-border first-row push-left">
-          <p class="no-reviews has-text-grey-light" style="padding-left: 50px; padding-top: 10px">Click to <br /> add a picture</p>
+          <img src="{{event.pic}}" />
         </div>
           <div class="column is-9 has-colored-border first-row">
             <div class="columns">

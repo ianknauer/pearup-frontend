@@ -1,11 +1,24 @@
-<form class="section">
-  <div class="container">
-    {{input value=model.name id="name" placeholder="" class="input"}}
+<section class="hero is-large">
+  <div class="hero-body">
+    <div class="container">
+
+      <form class="section">
+        <div class="container columns">
+          <div class="container column is-6 is-offset-3">
+            <div class="has-text-centered has-green-border">
+              <h1 class="has-text-weight-bold is-size-3">{{input value=model.name id="name" placeholder="Enter Event Name" class="input event-title-input"}}
+</h1>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+
+
 
     <div class="columns is-2">
       <div class="column is-10 is-offset-1 columns">
-        <div class="column is-3 has-colored-border first-row push-left">
-          <p class="no-reviews has-text-grey-light" style="padding-left: 50px; padding-top: 10px">Click to <br /> add a picture</p>
+        <div class="column is-3 has-colored-border first-row push-left upload-button">
+          {{profile-upload model.pic placeholderUrl="" onchange=(action (mut model.pic))}}
         </div>
           <div class="column is-9 has-colored-border first-row">
             <div class="columns">
@@ -61,3 +74,6 @@
     <button type="submit" {{action "submit"}} class="button is-warning is-medium is-super-warning">Create Event</button>
   </div>
 </div>
+</div>
+</div>
+</section>
