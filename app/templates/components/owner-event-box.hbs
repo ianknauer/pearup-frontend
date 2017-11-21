@@ -67,7 +67,8 @@
 
 <div class="field is-grouped columns is-centered">
   <div class="control"><br />
-    <button type="submit" {{action "save"}} class="button is-warning is-medium is-super-warning">Participate</button>
-    <button type="submit" class="button is-warning is-medium is-super-warning">Message</button>
+    {{#link-to "owner-events.edit" event}}
+      <button type="submit" class="button is-warning is-medium is-super-warning">Edit</button>
+    {{/link-to}}
   </div>
 </div>

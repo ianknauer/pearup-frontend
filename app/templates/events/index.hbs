@@ -11,22 +11,127 @@
         <p class="has-text-weight-bold is-size-4 my-events-header">Events I am hosting</p><br />
       </div>
     </div>
+    {{#each owner-event as |event|}}
+      <div class="section list-section">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-10 is-offset-1 columns">
+
+              <div class="column is-3 has-colored-border first-row push-left">
+                <img src="{{event.pic}}" />
+              </div>
+                <div class="column is-9 has-colored-border first-row">
+                  <h3 class="is-size-4 has-text-weight-bold is-event-header-inline">{{event.name}}</h3>
+                  <div class="columns">
+                    <div class="column is-4">
+                      <div class="field" for="dish">
+                        <label class="label">Instructor</label>
+                        <p>{{event.instructor}}</p>
+                      </div>
+                      <div class="field">
+                        <label class="label" for="city">Location</label>
+                        <p>Coquitlam, BC</p>
+                      </div>
+                      <div class="field" for="dish">
+                        <label class="label">Class Dish</label>
+                        {{event.dish}}
+                      </div>
+                   </div>
+
+                   <div class="column is-4">
+                     <div class="field">
+                       <label class="label" for="description">Description</label>
+                       <p>{{event.description}}</p>
+                     </div>
+                  </div>
+                  <div class="column is-4">
+                    <div class="control"><br /><br />
+                      {{#link-to "owner-events.show" event}}
+                        <button class="button is-warning is-medium is-super-warning event-list-button">See Event</button>
+                      {{/link-to}}
+                      <button class="button is-warning is-medium is-super-warning event-list-button">Message</button>
+
+                    </div>
+                 </div>
+                 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    {{/each}}
+
+    {{#unless owner-event}}
     <div class="columns">
       <div class="column is-5 is-offset-1 columns">
           <p class="has-text-grey-light">No events yet! Create an event and start your Pear Up experience!</p>
       </div>
     </div>
+  {{/unless}}
     <div class="columns">
       <div class="column is-5 is-offset-1 columns">
         <p class="has-text-weight-bold is-size-4 my-events-header">Events I am attending</p><br />
       </div>
     </div>
-    <div class="columns">
-      <div class="column is-5 is-offset-1 columns">
-          <p class="has-text-grey-light">No events yet! Find events close to you and start your Pear Up experience!</p>
+    {{#each participate-event as |event|}}
+      <div class="section list-section">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-10 is-offset-1 columns">
+
+              <div class="column is-3 has-colored-border first-row push-left">
+                <img src="{{event.pic}}" />
+              </div>
+                <div class="column is-9 has-colored-border first-row">
+                  <h3 class="is-size-4 has-text-weight-bold is-event-header-inline">{{event.name}}</h3>
+                  <div class="columns">
+                    <div class="column is-4">
+                      <div class="field" for="dish">
+                        <label class="label">Instructor</label>
+                        <p>{{event.instructor}}</p>
+                      </div>
+                      <div class="field">
+                        <label class="label" for="city">Location</label>
+                        <p>Coquitlam, BC</p>
+                      </div>
+                      <div class="field" for="dish">
+                        <label class="label">Class Dish</label>
+                        {{event.dish}}
+                      </div>
+                   </div>
+
+                   <div class="column is-4">
+                     <div class="field">
+                       <label class="label" for="description">Description</label>
+                       <p>{{event.description}}</p>
+                     </div>
+                  </div>
+                  <div class="column is-4">
+                    <div class="control"><br /><br />
+                      {{#link-to "participate-events.show" event}}
+                        <button class="button is-warning is-medium is-super-warning event-list-button">See Event</button>
+                      {{/link-to}}
+                      <button class="button is-warning is-medium is-super-warning event-list-button message-host">Message Host</button>
+
+                    </div>
+                 </div>
+                 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    {{/each}}
+
+    {{#unless participate-event}}
+      <div class="columns">
+        <div class="column is-5 is-offset-1 columns">
+            <p class="has-text-grey-light">No events yet! Find events close to you and start your Pear Up experience!</p>
+        </div>
       </div>
-    </div>
+    {{/unless}}
   </div>
+  <br /><br />
   <div class="field is-grouped columns is-centered">
     <div class="control"><br />
       {{#link-to 'events.new'}}
@@ -77,7 +182,7 @@
 
 
 
-{{#each model as |event|}}
+{{#each events as |event|}}
   <div class="section list-section">
     <div class="container">
       <div class="columns">
@@ -115,7 +220,7 @@
                   {{#link-to "events.show" event}}
                     <button class="button is-warning is-medium is-super-warning event-list-button">See Event</button>
                   {{/link-to}}
-                  <button class="button is-warning is-medium is-super-warning event-list-button">Message</button>
+                  <button class="button is-warning is-medium is-super-warning event-list-button message-host">Message Host</button>
 
                 </div>
              </div>

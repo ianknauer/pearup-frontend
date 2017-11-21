@@ -8,14 +8,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   sessionUser: Ember.inject.service('session-user'),
 
   model(params) {
-    return this.store.findRecord('event', params.event_id);
+    return this.store.findRecord('owner-event', params.event_id);
   },
-
-  actions: {
-    submit() {
-      let event = this.get('currentModel');
-      event.save();
-      this.transitionTo("events.show", event.id)
-    },
-  }
 });

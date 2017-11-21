@@ -24,6 +24,13 @@ Router.map(function() {
 
   this.route('login');
   this.route('sign-up');
+  this.route('owner-events', function(){
+    this.route('show', {path: "/:event_id"});
+    this.route('edit', {path: "/:event_id/edit"});
+  });
+  this.route('participate-events', function(){
+      this.route('show', {path: "/:event_id"});
+  });
 });
 
 export default Router;

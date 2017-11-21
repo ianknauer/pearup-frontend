@@ -18,6 +18,8 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     submit() {
       let event = this.get('currentModel');
       event.save();
+      this.transitionTo('events');
+
 
     },
   }

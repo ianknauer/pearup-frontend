@@ -15,9 +15,21 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     }
   },
 
-  model(params) {
-    return this.get('store').query('event', { filter: { distance: params.distance } });
-  },
+    model(params) {
+      return Ember.RSVP.hash({
+        participateEvent: this.store.findAll('participate-event', {reload: true}),
+        ownerEvent: this.store.findAll('owner-event', {reload: true}),
+        events: this.get('store').query('event', { filter: { distance: params.distance } }, {reload: true}),
+      });
+    },
+
+    setupController(controller, models) {
+      controller.set('participate-event', models.participateEvent);
+      controller.set('owner-event', models.ownerEvent);
+      controller.set('events', models.events);
+
+    },
+
 
   actions: {
       getUserLocation: function() {

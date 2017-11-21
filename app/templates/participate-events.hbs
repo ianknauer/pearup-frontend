@@ -1,0 +1,61 @@
+<nav class="navbar is-transparent nav-header">
+  <div class="navbar-brand">
+    {{#link-to 'events' class="navbar-item"}}
+      <img src="/assets/images/Logo_icon_banner.png" alt="" height="79">
+    {{/link-to}}
+    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="top-navbar" class="navbar-menu">
+    <div class="navbar-start">
+
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <div class="navbar-item has-dropdown is-hoverable">
+              {{link-to "Events" "events" class=" button is-primary is-outlined"}}
+              <div class="navbar-dropdown events-dropdown events-navbar-dropdown">
+                {{#link-to 'events' class="navbar-item events-navbar-item"}}
+                  Find Events
+                {{/link-to}}
+                {{#link-to 'events.new' class="navbar-item events-navbar-item"}}
+                  Create Event
+                {{/link-to}}
+              </div>
+            </div>
+          </p>
+          <p class="control">
+            <a class="button is-primary is-outlined" target="_blank">
+              <span>
+                Message
+              </span>
+            </a>
+          </p>
+
+          <p class="control">
+            <div class="navbar-item has-dropdown is-hoverable">
+              {{link-to "Profile" "profile" class="navbar-link"}}
+              <div class="navbar-dropdown">
+                {{#link-to 'profile.edit' class="navbar-item"}}
+                  Edit Profile
+                {{/link-to}}
+                <a {{action "logout"}} class="navbar-item">
+                  Logout
+                </a>
+              </div>
+            </div>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+{{outlet}}
