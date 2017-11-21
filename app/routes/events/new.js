@@ -8,15 +8,17 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   sessionUser: Ember.inject.service('session-user'),
 
   model(params) {
-    return this.store.createRecord('event');
+    let user = this.get('sessionUser.user');
+    return this.store.createRecord('event', {
+      user: user
+    });
   },
 
   actions: {
     submit() {
       let event = this.get('currentModel');
-      event.user = this.get('sessionUser');
       event.save();
-      this.transitionTo("events");
+
     },
   }
 });

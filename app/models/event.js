@@ -5,6 +5,7 @@ export default DS.Model.extend({
   description: DS.attr(),
   ingredients: DS.attr(),
   location: DS.attr(),
+  instructor: DS.attr(),
   spots: DS.attr(),
   dish: DS.attr(),
   pic: DS.attr(),
