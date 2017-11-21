@@ -2424,12 +2424,6 @@ ember-cli-eslint@^4.0.0:
     rsvp "^4.6.1"
     walk-sync "^0.3.0"
 
-ember-cli-form-data@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-form-data/-/ember-cli-form-data-1.1.0.tgz#2f94bae8ca68bead529b4651e315dd8f544571e5"
-  dependencies:
-    ember-cli-babel "^5.1.7"
-
 ember-cli-geo@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/ember-cli-geo/-/ember-cli-geo-4.0.0.tgz#da12a6be4a371149eabe3cff3d1c8383e4cf2cb8"

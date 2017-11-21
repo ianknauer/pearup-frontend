@@ -7,5 +7,4 @@ export default Ember.Controller.extend({
 
   queryParams: ['distance'],
   distance: 5,
-  userLocation: null
 });
