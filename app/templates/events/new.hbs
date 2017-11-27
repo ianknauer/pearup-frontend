@@ -77,3 +77,14 @@
 </div>
 </div>
 </section>
+
+{{#if isShowingModal}}
+  {{#modal-dialog onClose="toggleModal"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+    <h1 class="has-text-weight-bold is-size-3">Congratulations!</h1>
+    <p>Your event was successfully created!</p>
+    <p>keep an eye on your email to see participants applications</p>
+    <button class="button is-warning is-medium" {{action 'toggleModal'}}>Close</button>
+  {{/modal-dialog}}
+{{/if}}

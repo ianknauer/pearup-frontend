@@ -13,5 +13,21 @@ export default DS.JSONAPIAdapter.extend(HasManyQuery.RESTAdapterMixin, DataAdapt
   pathForType: function(type) {
     var dasherized = Ember.String.dasherize(type);
     return Ember.String.pluralize(dasherized);
+  },
+
+  shouldReloadRecord: function(store, snapshot) {
+    return true;
+  },
+
+  shouldReloadAll: function(store, snapshot) {
+    return true;
+  },
+
+  shouldBackgroundReloadRecord: function(store, snapshot) {
+    return false;
+  },
+
+  shouldBackgroundReloadAll: function(store, snapshot) {
+    return false;
   }
 });
