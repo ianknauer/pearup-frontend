@@ -19,7 +19,7 @@ module.exports = function(environment) {
     contentSecurityPolicy: {
       'font-src': "'self' fonts.gstatic.com",
       'style-src': "'self' fonts.googleapis.com",
-      'connect-src': "http://pearup.nanoapp.io",
+      'connect-src': "https://pearup.nanoapp.io",
     },
 
     cloudinary: {
