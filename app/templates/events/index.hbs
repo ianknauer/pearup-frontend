@@ -141,14 +141,6 @@
   </div>
 </div>
 
-
-
-{{!-- {{#link-to "events" (query-params distance="5")}}0-5{{/link-to}}
-{{#link-to "events" (query-params distance="15")}}6-15{{/link-to}}
-{{#link-to "events" (query-params distance="25")}}16-25{{/link-to}} --}}
-
-{{!-- <p>Hello, {{sessionUser.user.name}} </p> --}}
-
 <div class="section list-section">
   <div class="container">
     <div class="columns">
@@ -162,14 +154,15 @@
           <div class="field">
            <label class="label has-text-weight-normal" style="display: inline-block;">Distance from me</label>
              <p class="control" style="display: inline-block; top: -5px; margin-left: 5px;">
-               <span class="select" >
-                 <select>
-                 <option>0-10km</option>
-                 <option>10-20km</option>
-                 <option>20-30km</option>
-                 <option>40-50km</option>
-                 </select>
-             </span>
+               <div class="select">
+               {{#x-select value=distance on-change=(action 'setDistance') as |xs|}}
+                 {{#xs.option value=10}}0-10km{{/xs.option}}
+                 {{#xs.option value=20}}11-20km{{/xs.option}}
+                 {{#xs.option value=30}}21-30km{{/xs.option}}
+                 {{#xs.option value=40}}31-40km{{/xs.option}}
+                 {{#xs.option value=50}}41-50km{{/xs.option}}
+               {{/x-select}}
+             </div>
            </p>
          </div>
        </div>

@@ -6,6 +6,12 @@ export default Ember.Controller.extend({
   sessionUser: Ember.inject.service('session-user'),
 
   queryParams: ['distance'],
-  distance: 10,
-  userLocation: null
+  distance: 20,
+  userLocation: null,
+
+  actions: {
+    setDistance(value) {
+      this.set('distance', value)
+    }
+  }
 });
