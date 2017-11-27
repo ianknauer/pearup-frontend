@@ -36,16 +36,20 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
         let self = this;
         let user = this.get('sessionUser.user');
 
+
         this.get('geolocation').getLocation().then(() => {
           let currentLocation = this.get('geolocation').get('currentLocation');
           user.setProperties({longitude: currentLocation[0], latitude: currentLocation[1]});
           this.get('sessionUser').update().then(() => {
-            self.refresh();
-            self.transitionTo('events');
+            console.log('updating user');
+            self.send('sessionChanged');
           });
-          // this.refresh();
-        });
 
+        });
+      },
+
+      sessionChanged: function() {
+        this.refresh();
       }
     }
 });
