@@ -49,7 +49,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       },
 
       sessionChanged: function() {
-        this.refresh();
+        this.transitionTo('events');
       }
     }
 });
