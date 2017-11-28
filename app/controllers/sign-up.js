@@ -6,8 +6,14 @@ export default Ember.Controller.extend({
   actions: {
     save(user){
       let newUser = user;
-      newUser.save().catch((error) => {
-        this.set('errorMessage', error)
+      newUser.validate()
+        .then(({ validations }) => {
+          console.log(validations.get('isValid'));
+          if (validations.get('isValid')) {
+              newUser.save()
+            // this.toggleProperty('isShowingModal');
+          }
+    
       })
       .then(()=>{
         this.get('session')

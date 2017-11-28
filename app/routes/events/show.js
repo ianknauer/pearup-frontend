@@ -12,14 +12,5 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   },
 
   actions: {
-    save() {
-      let self = this;
-      this.get('store').findRecord('user', 'me').then(function(user){
-        user.get('events').pushObject(self.modelFor(self.routeName));
-        user.save();
-      });
-      this.transitionTo('events');
-
-    }
   }
 });

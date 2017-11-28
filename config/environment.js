@@ -8,7 +8,7 @@ module.exports = function(environment) {
     rootURL: '/',
     locationType: 'auto',
     googleFonts: [
-      'Raleway'
+      'Raleway:100, 300, 400, 500, 700, 900'
     ],
 
     'ember-simple-auth': {

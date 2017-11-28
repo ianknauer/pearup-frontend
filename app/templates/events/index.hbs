@@ -17,26 +17,43 @@
           <div class="columns">
             <div class="column is-10 is-offset-1 columns">
 
-              <div class="column is-3 has-colored-border first-row push-left" style="padding: 0px;">
-                <img src="{{event.pic}}" style="height: 100%; width: 100%;"/>
+              <div class="column is-3 has-colored-border first-row push-left" style="padding: 0px; max-width: 275px; max-height: 275px;">
+                <img src="{{event.pic}}" style="height: 100%; width: 100%; border-radius: 10px;"/>
               </div>
                 <div class="column is-9 has-colored-border first-row">
-                  <h3 class="is-size-4 has-text-weight-bold is-event-header-inline">{{event.name}}</h3>
+                  <h3 class="is-size-4 has-text-weight-bold is-event-header-inline" style="width: 65%;">{{event.name}}</h3>
                   <div class="columns">
-                    <div class="column is-4">
+
+                    <div class="column is-2">
                       <div class="field" for="dish">
-                        <label class="label">Instructor</label>
+                        <label class="label">Name</label>
                         <p>{{event.instructor}}</p>
                       </div>
                       <div class="field">
                         <label class="label" for="city">Location</label>
-                        <p>Coquitlam, BC</p>
+                        <p>{{event.city}}</p>
                       </div>
                       <div class="field" for="dish">
                         <label class="label">Class Dish</label>
                         {{event.dish}}
                       </div>
+
                    </div>
+                   <div class="column is-2">
+                     <div class="field" for="dish">
+                       <label class="label">Date</label>
+                      {{moment-format event.date 'MM/DD/YYYY'}}
+                     </div>
+                     <div class="field">
+                       <label class="label" for="city">Time</label>
+                       <p>{{event.time}}</p>
+                     </div>
+                     <div class="field" for="dish">
+                       <label class="label">Spots</label>
+                       {{event.spots}}
+                     </div>
+
+                  </div>
 
                    <div class="column is-4">
                      <div class="field">
@@ -45,7 +62,7 @@
                      </div>
                   </div>
                   <div class="column is-4">
-                    <div class="control"><br /><br />
+                    <div class="control">
                       {{#link-to "owner-events.show" event}}
                         <button class="button is-warning is-medium is-super-warning event-list-button">See Event</button>
                       {{/link-to}}
@@ -79,26 +96,49 @@
           <div class="columns">
             <div class="column is-10 is-offset-1 columns">
 
-              <div class="column is-3 has-colored-border first-row push-left" style="padding: 0px;">
-                <img src="{{event.pic}}" style="height: 100%; width: 100%;" />
+              <div class="column is-3 has-colored-border first-row push-left" style="padding: 0px; max-width: 275px; max-height: 275px;">
+                <img src="{{event.pic}}" style="height: 100%; width: 100%; border-radius: 10px;" />
               </div>
                 <div class="column is-9 has-colored-border first-row">
-                  <h3 class="is-size-4 has-text-weight-bold is-event-header-inline">{{event.name}}</h3>
+                  <h3 class="is-size-4 has-text-weight-bold is-event-header-inline" style="width: 65%;">{{event.name}}</h3>
                   <div class="columns">
-                    <div class="column is-4">
+
+                    <div class="column is-2">
                       <div class="field" for="dish">
-                        <label class="label">Instructor</label>
+                        <label class="label">Name</label>
                         <p>{{event.instructor}}</p>
                       </div>
                       <div class="field">
                         <label class="label" for="city">Location</label>
-                        <p>Coquitlam, BC</p>
+                        <p>{{event.city}}</p>
                       </div>
                       <div class="field" for="dish">
                         <label class="label">Class Dish</label>
                         {{event.dish}}
                       </div>
+
                    </div>
+                   <div class="column is-2">
+                     <div class="field" for="dish">
+                       <label class="label">Date</label>
+                      {{moment-format event.date 'MM/DD/YYYY'}}
+                     </div>
+                     <div class="field">
+                       <label class="label" for="city">Time</label>
+                       <p>{{event.time}}</p>
+                     </div>
+                     <div class="field" for="dish">
+                       <label class="label">Spots</label>
+                       {{event.spots}}
+                     </div>
+
+                  </div>
+                  <div class="column is-4">
+                    <div class="field">
+                      <label class="label" for="description">Description</label>
+                      <p>{{event.description}}</p>
+                    </div>
+                 </div>
 
                    <div class="column is-4">
                      <div class="field">
@@ -107,7 +147,7 @@
                      </div>
                   </div>
                   <div class="column is-4">
-                    <div class="control"><br /><br />
+                    <div class="control">
                       {{#link-to "participate-events.show" event}}
                         <button class="button is-warning is-medium is-super-warning event-list-button">See Event</button>
                       {{/link-to}}
@@ -166,7 +206,7 @@
            </p>
          </div>
        </div>
-        <button type="button" class="button is-primary is-small geolocate-button" style="margin-left: -60px; margin-top: 10px;" {{action 'getUserLocation'}}>Geolocate me!</button>
+        <button type="button" class="button is-warning is-medium geolocate-button" style="margin-left: -60px; margin-top: 3px; font-weight: 500" {{action 'getUserLocation'}}>Geolocate me!</button>
 
       </div>
     </div>
@@ -181,35 +221,52 @@
       <div class="columns">
         <div class="column is-10 is-offset-1 columns">
 
-          <div class="column is-3 has-colored-border first-row push-left" style="padding: 0px;">
-            <img src="{{event.pic}}" style="height: 100%; width:100%;" />
+          <div class="column is-3 has-colored-border first-row push-left" style="padding: 0px; max-width: 275px; max-height: 275px;">
+            <img src="{{event.pic}}" style="height: 100%; width:100%; border-radius: 10px;" />
           </div>
             <div class="column is-9 has-colored-border first-row">
-              <h3 class="is-size-4 has-text-weight-bold is-event-header-inline">{{event.name}}</h3>
+              <h3 class="is-size-4 has-text-weight-bold is-event-header-inline" style="width: 65%;">{{event.name}}</h3>
               <div class="columns">
-                <div class="column is-4">
+
+                <div class="column is-2">
                   <div class="field" for="dish">
-                    <label class="label">Instructor</label>
+                    <label class="label">Name</label>
                     <p>{{event.instructor}}</p>
                   </div>
                   <div class="field">
                     <label class="label" for="city">Location</label>
-                    <p>Coquitlam, BC</p>
+                    <p>{{event.city}}</p>
                   </div>
                   <div class="field" for="dish">
                     <label class="label">Class Dish</label>
                     {{event.dish}}
                   </div>
-               </div>
 
-               <div class="column is-4">
-                 <div class="field">
-                   <label class="label" for="description">Description</label>
-                   <p>{{event.description}}</p>
+               </div>
+               <div class="column is-2">
+                 <div class="field" for="dish">
+                   <label class="label">Date</label>
+                   {{moment-format event.date 'MM/DD/YYYY'}}
                  </div>
+                 <div class="field">
+                   <label class="label" for="city">Time</label>
+                   <p>{{event.time}}</p>
+                 </div>
+                 <div class="field" for="dish">
+                   <label class="label">Spots</label>
+                   {{event.spots}}
+                 </div>
+
               </div>
+
               <div class="column is-4">
-                <div class="control"><br /><br />
+                <div class="field">
+                  <label class="label" for="description">Description</label>
+                  <p>{{event.description}}</p>
+                </div>
+             </div>
+              <div class="column is-4">
+                <div class="control">
                   {{#link-to "events.show" event}}
                     <button class="button is-warning is-medium is-super-warning event-list-button">See Event</button>
                   {{/link-to}}

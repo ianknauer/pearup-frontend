@@ -1,20 +1,16 @@
 <form class="section">
   <div class="container columns">
-    <div class="container column is-6 is-offset-3">
+    <div class="container column is-5" style="margin-left: 29%;">
       <div class="has-text-centered has-green-border">
         <h1 class="has-text-weight-bold is-size-3">{{event.name}}</h1>
       </div>
     </div>
   </div>
   <div class="container">
-
-
-
-
     <div class="columns is-2">
       <div class="column is-10 is-offset-1 columns">
-        <div class="column is-3 has-colored-border first-row push-left">
-          <img src="{{event.pic}}" />
+        <div class="column is-3 has-colored-border first-row push-left" style="padding: 0; max-height: 254px;">
+          <img src="{{event.pic}}" class="profile-img" />
         </div>
           <div class="column is-9 has-colored-border first-row">
             <div class="columns">
@@ -25,7 +21,7 @@
                 </div>
                 <div class="field">
                   <label class="label" for="city">Class Location</label>
-                  <p>Coquitlam, BC</p>
+                  <p>{{event.city}}</p>
                 </div>
                 <div class="field" for="dish">
                   <label class="label">Class Dish</label>
@@ -35,11 +31,11 @@
              <div class="column is-2">
                <div class="field" for="Date">
                  <label class="label">Date</label>
-                 <p>11/04/2017</p>
+                 {{moment-format event.date 'MM/DD/YYYY'}}
                </div>
                <div class="field">
                  <label class="label" for="city">Time</label>
-                 <p>2-5PM</p>
+                 {{event.time}}
                </div>
                <div class="field">
                  <label class="label" for="spots">Spots</label>

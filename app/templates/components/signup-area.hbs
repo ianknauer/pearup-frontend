@@ -1,7 +1,16 @@
-<section class="hero is-fullheight">
-<div class="hero-body">
-  <div class="container container-box has-text-centered home-features">
+<section>
+  <div class="container container-box has-text-centered" style="margin-top: 30px;">
      <article class="message is-featured">
+     {{#if (v-get user 'isInvalid')}}
+       <div class="columns">
+         <div class="notification is-warning is-outline is-4 is-offset-4 column" style="margin-bottom: 30px;">
+           Please fill out the required fields below!
+         </div>
+       </div>
+     {{/if}}
+
+
+
        <h1 class="is-size-3 has-text-weight-bold has-text-primary is-welcome-header">Welcome to <span class="not-bold has-text-weight-light has-text-black-bis">PearUp</span>!</h1>
        <br />
          <div class="columns">
@@ -10,34 +19,34 @@
                <div class="column is-10 is-offset-1">
                  <div class="field">
                   <label class="label" for="name">Name *</label>
-                  {{input value=user.name id="name" placeholder="Full name" class="input"}}
+                  {{input value=user.name id="name" placeholder="Full name" class=(if (v-get user 'name' 'isInvalid') "input is-danger" "input")}}
                 </div>
                 <div class="field">
                   <label class="label" for="address">Address *</label>
-                  {{input value=user.address id="address" placeholder="123 example st" class="input"}}
+                  {{input value=user.address id="address" placeholder="123 example st" class=(if (v-get user 'address' 'isInvalid') "input is-danger" "input")}}
                 </div>
                 <div class="field">
                  <label class="label" for="username">E-mail *</label>
-                 {{input value=user.username id="username" placeholder="email@pearup.com" class="input"}}
+                 {{input value=user.username id="username" placeholder="email@pearup.com" class=(if (v-get user 'username' 'isInvalid') "input is-danger" "input")}}
                </div>
                <div class="field">
                  <label class="label" for="password">Password *</label>
-                 {{input value=user.password type="password" id="password" placeholder="********" class="input"}}
+                 {{input value=user.password type="password" id="password" placeholder="********" class=(if (v-get user 'password' 'isInvalid') "input is-danger" "input")}}
                  <p><span class="help">*Required fields</span></p>
                </div>
                  <div class="field is-grouped columns is-centered">
                    <div class="control column is-6 is-offset-1"><br />
-                     <button type="submit" class="button is-warning is-medium is-super-warning">Sign Up</button>
+                     {{#if (v-get user 'isInvalid')}}
+                       <button type="submit" class="button is-warning is-medium is-super-warning" disabled>Sign Up</button>
+                     {{else }}
+                       <button type="submit" {{action "submit"}} class="button is-warning is-medium is-super-warning">Sign Up</button>
+                     {{/if}}
                    </div>
                 </div>
               </div>
             </div>
           </form>
-          {{#if errorMessage}}
-            {{errorMessage}}
-          {{/if}}
         </div>
      </article>
   </div>
-</div>
 </section>

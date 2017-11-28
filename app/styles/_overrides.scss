@@ -77,3 +77,31 @@
   padding-right: 5px;
   font-weight: 900;
 }
+
+.button.is-medium {
+  min-width: 210px;
+}
+
+.profile-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.upload-button img {
+  height: 180px;
+  max-width: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.label:not(:last-child) {
+    margin-bottom: 0px;
+}
+
+.menu-profile-image {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #96D18A;
+}

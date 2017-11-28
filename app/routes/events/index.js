@@ -17,9 +17,9 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
     model(params) {
       return Ember.RSVP.hash({
-        participateEvent: this.store.findAll('participate-event', {reload: true}),
-        ownerEvent: this.store.findAll('owner-event', {reload: true}),
-        events: this.get('store').query('event', { filter: { distance: params.distance } }, {reload: true}),
+       participateEvent: this.store.findAll('participate-event', {reload: true}),
+       ownerEvent: this.store.findAll('owner-event', {reload: true}),
+       events: this.get('store').query('event', { filter: { distance: params.distance } }, {reload: true}),
       });
     },
 

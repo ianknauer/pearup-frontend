@@ -1397,7 +1397,7 @@ broccoli-funnel@^1.0.0, broccoli-funnel@^1.0.1, broccoli-funnel@^1.0.2, broccoli
     symlink-or-copy "^1.0.0"
     walk-sync "^0.3.1"
 
-broccoli-funnel@^2.0.1:
+broccoli-funnel@^2.0.0, broccoli-funnel@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/broccoli-funnel/-/broccoli-funnel-2.0.1.tgz#6823c73b675ef78fffa7ab800f083e768b51d449"
   dependencies:
@@ -2443,7 +2443,7 @@ ember-cli-babel@^6.0.0, ember-cli-babel@^6.0.0-beta.4, ember-cli-babel@^6.0.0-be
     ember-cli-version-checker "^2.1.0"
     semver "^5.4.1"
 
-ember-cli-babel@^6.10.0, ember-cli-babel@^6.9.2:
+ember-cli-babel@^6.10.0, ember-cli-babel@^6.7.2, ember-cli-babel@^6.9.2:
   version "6.10.0"
   resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-6.10.0.tgz#81424acd1d97fb13658168121eeb2007d6edee84"
   dependencies:
@@ -2538,6 +2538,10 @@ ember-cli-htmlbars@^2.0.1, ember-cli-htmlbars@^2.0.3:
     json-stable-stringify "^1.0.0"
     strip-bom "^3.0.0"
 
+ember-cli-import-polyfill@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/ember-cli-import-polyfill/-/ember-cli-import-polyfill-0.2.0.tgz#c1a08a8affb45c97b675926272fe78cf4ca166f2"
+
 ember-cli-inject-live-reload@^1.4.1:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/ember-cli-inject-live-reload/-/ember-cli-inject-live-reload-1.7.0.tgz#af94336e015336127dfb98080ad442bb233e37ed"
@@ -2590,6 +2594,22 @@ ember-cli-mirage@^0.3.4:
     faker "^3.0.0"
     pretender "^1.4.2"
     route-recognizer "^0.2.3"
+
+ember-cli-moment-shim@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/ember-cli-moment-shim/-/ember-cli-moment-shim-3.5.0.tgz#7ea8d42b0a04c767258287b30447681e52fba0c4"
+  dependencies:
+    broccoli-funnel "^2.0.0"
+    broccoli-merge-trees "^2.0.0"
+    broccoli-source "^1.1.0"
+    broccoli-stew "^1.5.0"
+    chalk "^1.1.3"
+    ember-cli-babel "^6.8.2"
+    ember-cli-import-polyfill "^0.2.0"
+    exists-sync "^0.0.4"
+    lodash.defaults "^4.2.0"
+    moment "^2.18.1"
+    moment-timezone "^0.5.13"
 
 ember-cli-node-assets@^0.1.4:
   version "0.1.6"
@@ -2954,6 +2974,16 @@ ember-factory-for-polyfill@^1.1.0, ember-factory-for-polyfill@^1.3.1:
     node-fetch "^2.0.0-alpha.9"
     whatwg-fetch "^2.0.3"
 
+ember-flatpickr@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/ember-flatpickr/-/ember-flatpickr-2.1.0.tgz#07f66df0c4c220113b6e5be6c048f9c8cee9dc3c"
+  dependencies:
+    ember-cli-babel "^6.8.2"
+    ember-cli-node-assets "^0.2.2"
+    ember-diff-attrs "^0.1.2"
+    fastboot-transform "^0.1.2"
+    flatpickr "4.0.6"
+
 ember-get-config@0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/ember-get-config/-/ember-get-config-0.2.1.tgz#a1325cceefcb4534c78fc6ccb2be87a3feda6817"
@@ -3075,6 +3105,14 @@ ember-model-validator@^2.13.0:
   dependencies:
     ember-cli-babel "6.6.0"
 
+ember-moment@^7.5.0:
+  version "7.5.0"
+  resolved "https://registry.yarnpkg.com/ember-moment/-/ember-moment-7.5.0.tgz#9ed25b32ae941b2f1d9116c44f518a52bdb01722"
+  dependencies:
+    ember-cli-babel "^6.7.2"
+    ember-getowner-polyfill "^2.0.1"
+    ember-macro-helpers "^0.17.0"
+
 ember-native-dom-helpers@^0.5.4:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/ember-native-dom-helpers/-/ember-native-dom-helpers-0.5.5.tgz#979764773a1608a42c3e1ec7e98144e416e35898"
@@ -3110,6 +3148,16 @@ ember-parachute@^0.3.2:
     ember-assign-polyfill "^2.0.1"
     ember-cli-babel "^6.0.0"
     ember-getowner-polyfill "^2.0.1"
+
+ember-pikaday@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/ember-pikaday/-/ember-pikaday-2.2.3.tgz#791c5fa69cf625f8767a76031eaa8820acec5feb"
+  dependencies:
+    ember-cli-babel "^5.1.7"
+    ember-cli-htmlbars "^1.1.1"
+    ember-cli-node-assets "^0.2.2"
+    fastboot-transform "^0.1.1"
+    pikaday "^1.5.1"
 
 ember-power-select-blockless@^0.3.1:
   version "0.3.1"
@@ -3615,7 +3663,7 @@ exists-sync@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/exists-sync/-/exists-sync-0.0.3.tgz#b910000bedbb113b378b82f5f5a7638107622dcf"
 
-exists-sync@0.0.4:
+exists-sync@0.0.4, exists-sync@^0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/exists-sync/-/exists-sync-0.0.4.tgz#9744c2c428cc03b01060db454d4b12f0ef3c8879"
 
@@ -3749,6 +3797,12 @@ fast-sourcemap-concat@^1.0.1:
     source-map "^0.4.2"
     source-map-url "^0.3.0"
     sourcemap-validator "^1.0.5"
+
+fastboot-transform@^0.1.1, fastboot-transform@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/fastboot-transform/-/fastboot-transform-0.1.2.tgz#f910d666ab93e75604492ea655270d1804bc8de7"
+  dependencies:
+    broccoli-stew "^1.5.0"
 
 faye-websocket@~0.10.0:
   version "0.10.0"
@@ -3884,6 +3938,10 @@ flat-cache@^1.2.1:
     del "^2.0.2"
     graceful-fs "^4.1.2"
     write "^0.2.1"
+
+flatpickr@4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.0.6.tgz#d898778636984b9b46b590f3b60513fc260db709"
 
 for-in@^1.0.1:
   version "1.0.2"
@@ -5088,6 +5146,10 @@ lodash.debounce@^3.1.1:
   dependencies:
     lodash._getnative "^3.0.0"
 
+lodash.defaults@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
+
 lodash.defaults@~2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-2.3.0.tgz#a832b001f138f3bb9721c2819a2a7cc5ae21ed25"
@@ -5501,6 +5563,16 @@ mkdirp@^0.3.5:
 mktemp@^0.4.0, mktemp@~0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/mktemp/-/mktemp-0.4.0.tgz#6d0515611c8a8c84e484aa2000129b98e981ff0b"
+
+moment-timezone@^0.5.13:
+  version "0.5.14"
+  resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.14.tgz#4eb38ff9538b80108ba467a458f3ed4268ccfcb1"
+  dependencies:
+    moment ">= 2.9.0"
+
+moment@2.x, "moment@>= 2.9.0", moment@^2.18.1:
+  version "2.19.2"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.19.2.tgz#8a7f774c95a64550b4c7ebd496683908f9419dbe"
 
 morgan@^1.8.1:
   version "1.9.0"
@@ -5929,6 +6001,12 @@ pify@^2.0.0:
 pify@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-3.0.0.tgz#e5a4acd2c101fdf3d9a4d07f0dbc4db49dd28176"
+
+pikaday@^1.5.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/pikaday/-/pikaday-1.6.1.tgz#b91bcb9b8539cedd8d6d08e4e7465e12095671b0"
+  optionalDependencies:
+    moment "2.x"
 
 pinkie-promise@^2.0.0:
   version "2.0.1"

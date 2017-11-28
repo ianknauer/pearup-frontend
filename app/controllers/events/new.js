@@ -1,13 +1,11 @@
 import Ember from 'ember';
-//import EventValidations from '../validations/events';
 
 export default Ember.Controller.extend({
-  //EventValidations,
 
   session: Ember.inject.service('session'),
   sessionUser: Ember.inject.service('session-user'),
 
-  isShowingModal: false,
+  isShowingModal: true,
 
   actions: {
     submit() {
