@@ -17,7 +17,7 @@
 
           <div class="columns is-2">
             <div class="column is-10 is-offset-1 columns">
-              <div class="column is-3 has-colored-border first-row push-left">
+              <div class="column is-3 has-colored-border first-row push-left" style="padding: 0; max-height: 254px;">
                 <img src="{{model.pic}}" class="profile-img"/>
               </div>
                 <div class="column is-9 has-colored-border first-row">
@@ -78,3 +78,18 @@
 
     </div>
 </section>
+
+{{#if isShowingModal}}
+  {{#modal-dialog onClose="toggleModal"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+                  <div class="columns has-text-centered">
+                    <div class="column is-8 is-offset-2" style="margin-top: 30px; margin-bottom: 30px;">
+                      <h1 class="has-text-weight-bold is-size-3">Sit tight!</h1><br/>
+                      <p>We'll get back to you when the instructor confirms your place.</p><br />
+                      <p>Keep an eye on your email to see when your class gets cofirmed.</p><br />
+                      <button class="button is-warning is-medium" {{action 'toggleModal'}}>Close</button>
+                    </div>
+                  </div>
+  {{/modal-dialog}}
+{{/if}}

@@ -62,7 +62,7 @@
              <div class="column is-4">
                <div class="field">
                  <label class="label" for="description">Description</label>
-                 {{textarea value=model.description id="description" placeholder="Tell us something about yourself!" style="border-radius: 10px;" class=(if (v-get model 'description' 'isInvalid') "textarea is-danger" "textarea")}}
+                 {{textarea value=model.description id="description" placeholder="" style="border-radius: 10px;" class=(if (v-get model 'description' 'isInvalid') "textarea is-danger" "textarea")}}
                </div>
             </div>
             <div class="column is-4">
@@ -95,9 +95,13 @@
   {{#modal-dialog onClose="toggleModal"
                   targetAttachment="center"
                   translucentOverlay=true}}
-    <h1 class="has-text-weight-bold is-size-3">Congratulations!</h1>
-    <p>Your event was successfully created!</p>
-    <p>keep an eye on your email to see participants applications</p>
-    <button class="button is-warning is-medium" {{action 'toggleModal'}}>Close</button>
+                  <div class="columns has-text-centered">
+                    <div class="column is-8 is-offset-2" style="margin-top: 30px; margin-bottom: 30px;">
+                      <h1 class="has-text-weight-bold is-size-3">Congratulations!</h1><br/>
+                      <p>Your event was successfully created!</p><br />
+                      <p>keep an eye on your email to see participants applications.</p><br />
+                      <button class="button is-warning is-medium" {{action 'toggleModal'}}>Close</button>
+                    </div>
+                  </div>
   {{/modal-dialog}}
 {{/if}}

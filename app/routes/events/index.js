@@ -15,21 +15,25 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     }
   },
 
-    model(params) {
-      return Ember.RSVP.hash({
-       participateEvent: this.store.findAll('participate-event', {reload: true}),
-       ownerEvent: this.store.findAll('owner-event', {reload: true}),
-       events: this.get('store').query('event', { filter: { distance: params.distance } }, {reload: true}),
-      });
-    },
+  model(params) {
+    console.log('getting called');
+    return Ember.RSVP.hash({
+     participateEvent: this.store.query('participate-event', { reload: true }),
+     ownerEvent: this.store.query('owner-event',  { reload: true }),
+     events: this.store.query('event', { filter: { distance: params.distance } }, {reload: true}),
+    });
+  },
 
-    setupController(controller, models) {
-      controller.set('participate-event', models.participateEvent);
-      controller.set('owner-event', models.ownerEvent);
-      controller.set('events', models.events);
+  setupController(controller, models) {
+    controller.set('participate-event', models.participateEvent);
+    controller.set('owner-event', models.ownerEvent);
+    controller.set('events', models.events);
+    // this.refresh();
+  },
 
-    },
-
+  // resetController(controller, isExiting, transition) {
+  //   this.refresh();
+  // },
 
   actions: {
       getUserLocation: function() {
@@ -49,7 +53,12 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       },
 
       sessionChanged: function() {
-        this.transitionTo('events');
-      }
+        this.refresh();
+      },
+
+      willTransition() {
+        console.log('moving around');
+        // this.send('sessionChanged');
+      },
     }
 });

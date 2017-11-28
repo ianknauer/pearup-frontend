@@ -13,5 +13,5 @@ export default Ember.Controller.extend({
     setDistance(value) {
       this.set('distance', value)
     }
-  }
+  },
 });
