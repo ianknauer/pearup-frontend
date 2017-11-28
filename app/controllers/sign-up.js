@@ -6,16 +6,13 @@ export default Ember.Controller.extend({
   actions: {
     save(user){
       let newUser = user;
-      newUser.save().catch((error) => {
-        this.set('errorMessage', error)
-      })
-      .then(()=>{
-        this.get('session')
-        .authenticate('authenticator:oauth2',
-          newUser.get('username'), newUser.get('password'))
-        .catch((reason) => {
-          this.set('errorMessage', reason.error ||reason);
-        });
+      newUser.validate()
+        .then(({ validations }) => {
+          if (validations.get('isValid')) {
+              newUser.save()
+              this.transitionToRoute('login');
+          }
+
       })
     }
   }

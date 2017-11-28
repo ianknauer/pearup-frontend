@@ -1,15 +1,15 @@
-<section class="hero is-large">
-  <div class="hero-body">
+<section>
+<br />
     <div class="container">
       <div class="section">
         <div class="container">
           <div class="columns is-2">
             <div class="column is-8 is-offset-2 columns">
-              <div class="column is-3 has-colored-border first-row push-left">
-                <img src="{{sessionUser.user.pic}}" />
+              <div class="column is-4 has-colored-border first-row push-left" style="padding: 0; max-height: 254px;">
+                <img src="{{sessionUser.user.pic}}" class="profile-img"/>
                 </div>
-              <div class="column is-9 has-colored-border first-row" style="width: 73.5%">
-                <div class="columns">
+              <div class="column is-8 has-colored-border first-row" style="width: 65%">
+                <div class="columns" style="padding: 20px 0px;">
                   <div class="column is-6">
                     <div class="field">
                       <label class="label">Name</label>
@@ -21,8 +21,8 @@
                     </div>
                     <div class="field">
                       <label class="label">Location</label>
-                      {{#if sessionUser.user.city}}
-                        {{sessionUser.user.city}}
+                      {{#if sessionUser.user.address}}
+                        {{sessionUser.user.address}}
                       {{else}}
                       <p class="has-text-grey-light">Tell us where you live</p>
                       {{/if}}
@@ -54,7 +54,7 @@
         <div class="container">
           <div class="columns">
             <div class="column is-8 is-offset-2 columns">
-              <div class="column is-12 has-colored-border reviews columns">
+              <div class="column is-12 has-colored-border reviews columns" style="min-height: 240px;">
                 <label class="label">Reviews</label>
                   <div class="column is-5 is-offset-3">
                     <p class="no-reviews has-text-grey-light">No reviews yet! Creat an event and start your Pear Up experience!</p>
@@ -73,7 +73,4 @@
         </div>
       </div>
     </div>
-  </div>
-
-
 </section>

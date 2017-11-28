@@ -1,12 +1,18 @@
-<section class="hero is-large">
-  <div class="hero-body">
+<section>
     <div class="container">
 
       <form class="section">
+        {{#if (v-get model 'isInvalid')}}
+          <div class="columns">
+            <div class="notification is-warning is-outline is-4 is-offset-4 column" style="margin-bottom: 30px;">
+              Please fill out the required fields below!
+            </div>
+          </div>
+        {{/if}}
         <div class="container columns">
-          <div class="container column is-6 is-offset-3">
-            <div class="has-text-centered has-green-border">
-              <h1 class="has-text-weight-bold is-size-3">{{input value=model.name id="name" placeholder="Enter Event Name" class="input event-title-input"}}
+          <div class="container column is-5" style="margin-left: 29%;">
+            <div class={{if (v-get model 'name' 'isInvalid') "has-text-centered has-red-border" "has-text-centered has-green-border"}}>
+              <h1 class="has-text-weight-bold is-size-3">{{input value=model.name id="name" placeholder="Enter Event Name" class="input event-title-input" class="event-title-input input"}}
 </h1>
             </div>
           </div>
@@ -17,49 +23,52 @@
 
     <div class="columns is-2">
       <div class="column is-10 is-offset-1 columns">
-        <div class="column is-3 has-colored-border first-row push-left upload-button">
-          {{profile-upload model.pic placeholderUrl="" onchange=(action (mut model.pic))}}
+        <div class="column is-3 has-colored-border first-row push-left upload-button" style="padding: 0; max-height: 254px;">
+          {{profile-upload fileUrl=model.pic placeholderUrl="" onchange=(action (mut model.pic))}}
+
         </div>
           <div class="column is-9 has-colored-border first-row">
             <div class="columns">
-              <div class="column is-2">
-                <div class="field" for="dish">
-                  <label class="label">Instructor</label>
-                  <p>{{CurrentUser.user.name}}</p>
+              <div class="column is-4">
+                <div class="field" for="location">
+                  <label class="label">Class location</label>
+                  {{input value=model.location id="location" placeholder="" class=(if (v-get model 'location' 'isInvalid') "input is-danger" "input")}}
                 </div>
-                <div class="field">
-                  <label class="label" for="city">Class Location</label>
-                  {{input value=model.location id="location" placeholder="location" class="input"}}
+                <div class="columns">
+                  <div class="column is-6">
+                    <div class="{{if (v-get model 'date' 'isInvalid') "field date-field date-field-required" "field date-field"}}" for="Date">
+                      <label class="label">Date</label>
+                      {{pikaday-input value=model.date theme="dark-theme" onSelection=(action (mut model.date))}}
+                    </div>
+                    <div class="field" for="dish">
+                      <label class="label">Class Dish</label>
+                      {{textarea value=model.dish id="dish" placeholder="" class=(if (v-get model 'dish' 'isInvalid') "input dish-input is-danger" "dish-input input")}}
+                    </div>
+                  </div>
+                    <div class="column is-6">
+                      <div class="field">
+                        <label class="label" for="city">Time</label>
+                        {{input value=model.time id="time" placeholder="" class=(if (v-get model 'time' 'isInvalid') "input is-danger" "input")}}
+                      </div>
+                      <div class="field">
+                        <label class="label" for="spots">Spots</label>
+                        {{input value=model.spots id="spots" placeholder="" class=(if (v-get model 'spots' 'isInvalid') "input is-danger" "input")}}
+                      </div>
+                    </div>
                 </div>
-                <div class="field" for="dish">
-                  <label class="label">Class Dish</label>
-                  {{input value=model.dish id="dish" placeholder="" class="input"}}
-                </div>
+
              </div>
-             <div class="column is-2">
-               <div class="field" for="Date">
-                 <label class="label">Date</label>
-                 <p>11/04/2017</p>
-               </div>
-               <div class="field">
-                 <label class="label" for="city">Time</label>
-                 <p>2-5PM</p>
-               </div>
-               <div class="field">
-                 <label class="label" for="spots">Spots</label>
-                 {{input value=model.spots id="spots" placeholder="" class="input"}}
-               </div>
-            </div>
+
              <div class="column is-4">
                <div class="field">
                  <label class="label" for="description">Description</label>
-                 {{textarea value=model.description id="description" placeholder="Tell us something about yourself!" class="textarea"}}
+                 {{textarea value=model.description id="description" placeholder="" style="border-radius: 10px;" class=(if (v-get model 'description' 'isInvalid') "textarea is-danger" "textarea")}}
                </div>
             </div>
             <div class="column is-4">
               <div class="field">
                 <label class="label" for="ingredients">What to bring</label>
-                {{textarea value=model.ingredients id="ingredients" placeholder="" class="textarea"}}
+                {{textarea value=model.ingredients id="ingredients" placeholder="" style="border-radius: 10px;" class=(if (v-get model 'ingredients' 'isInvalid') "textarea is-danger" "textarea")}}
               </div>
            </div>
            </div>
@@ -71,9 +80,28 @@
 
 <div class="field is-grouped columns is-centered">
   <div class="control"><br />
-    <button type="submit" {{action "submit"}} class="button is-warning is-medium is-super-warning">Create Event</button>
+    {{#if (v-get model 'isInvalid')}}
+      <button type="submit" class="button is-warning is-medium is-super-warning" disabled>Done</button>
+    {{else }}
+      <button type="submit" {{action "submit"}} class="button is-warning is-medium is-super-warning">Done</button>
+    {{/if}}
   </div>
 </div>
 </div>
-</div>
 </section>
+
+
+{{#if isShowingModal}}
+  {{#modal-dialog onClose="toggleModal"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+                  <div class="columns has-text-centered">
+                    <div class="column is-8 is-offset-2" style="margin-top: 30px; margin-bottom: 30px;">
+                      <h1 class="has-text-weight-bold is-size-3">Congratulations!</h1><br/>
+                      <p>Your event was successfully created!</p><br />
+                      <p>keep an eye on your email to see participants applications.</p><br />
+                      <button class="button is-warning is-medium" {{action 'toggleModal'}}>Close</button>
+                    </div>
+                  </div>
+  {{/modal-dialog}}
+{{/if}}

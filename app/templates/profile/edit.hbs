@@ -1,15 +1,16 @@
-<section class="hero is-large">
-  <div class="hero-body">
-    <div class="container">
+<section>
+  <br />
+<div class="container">
 <form class="section">
+
   <div class="container">
     <div class="columns is-2">
       <div class="column is-8 is-offset-2 columns">
-        <div class="column is-3 has-colored-border first-row push-left upload-button">
+        <div class="column is-4 has-colored-border first-row push-left upload-button" style="padding: 0; max-height: 254px;">
           {{profile-upload fileUrl=sessionUser.user.pic placeholderUrl="" onchange=(action (mut sessionUser.user.pic))}}
         </div>
-          <div class="column is-9 has-colored-border first-row" style="width: 73.5%">
-            <div class="columns">
+          <div class="column is-8 has-colored-border first-row" style="width: 65%">
+            <div class="columns" style="padding: 20px 0px;">
               <div class="column is-6">
                 <div class="field" for="name">
                   <label class="label">Name</label>
@@ -39,7 +40,7 @@
   <div class="container">
     <div class="columns">
       <div class="column is-8 is-offset-2 columns">
-        <div class="column is-12 has-colored-border reviews columns">
+        <div class="column is-12 has-colored-border reviews columns" style="min-height: 240px;">
           <label class="label">Reviews</label>
             <div class="column is-5 is-offset-3">
               <p class="no-reviews has-text-grey-light">No reviews yet! Creat an event and start your Pear Up experience!</p>
@@ -54,7 +55,6 @@
   <div class="control"><br />
     <button type="submit" {{action "submit"}} class="button is-warning is-medium is-super-warning">Submit</button>
   </div>
-</div>
 </div>
 </div>
 </section>

@@ -17,11 +17,11 @@
 
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="field is-grouped">
-          <p class="control">
+        <div class="field is-grouped level">
+          <p class="control level-item">
             <div class="navbar-item has-dropdown is-hoverable">
               {{link-to "Events" "events" class=" button is-primary is-outlined"}}
-              <div class="navbar-dropdown events-dropdown events-navbar-dropdown">
+              <div class="navbar-dropdown events-dropdown events-navbar-dropdown" style="padding-top: 32px;">
                 {{#link-to 'events' class="navbar-item events-navbar-item"}}
                   Find Events
                 {{/link-to}}
@@ -31,7 +31,7 @@
               </div>
             </div>
           </p>
-          <p class="control">
+          <p class="control level-item">
             <a class="button is-primary is-outlined" target="_blank">
               <span>
                 Message
@@ -41,7 +41,16 @@
 
           <p class="control">
             <div class="navbar-item has-dropdown is-hoverable">
-              {{link-to "Profile" "profile" class="navbar-link"}}
+              {{#link-to "profile" class="navbar-link level-item"}}
+                <figure class="image is-55x55">
+                  {{#if sessionUser.user.pic}}
+                    <img src="{{sessionUser.user.pic}}" alt="profile-button" class="menu-profile-image" style="height: 60px; width: 60px;">
+                  {{else}}
+                  <img src="/assets/images/Icon_profile.png" alt="profile-button" class="menu-profile-image" style="height: 60px; width: 60px;">
+
+                  {{/if}}
+                </figure>
+              {{/link-to}}
               <div class="navbar-dropdown">
                 {{#link-to 'profile.edit' class="navbar-item"}}
                   Edit Profile

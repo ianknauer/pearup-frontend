@@ -25,7 +25,7 @@
                 </div>
                 <div class="field">
                   <label class="label" for="city">Class Location</label>
-                  <p>Coquitlam, BC</p>
+                  <p>{{event.city}}</p>
                 </div>
                 <div class="field" for="dish">
                   <label class="label">Class Dish</label>
@@ -35,11 +35,11 @@
              <div class="column is-2">
                <div class="field" for="Date">
                  <label class="label">Date</label>
-                 <p>11/04/2017</p>
+                 {{moment-format event.date 'MM/DD/YYYY'}}
                </div>
                <div class="field">
                  <label class="label" for="city">Time</label>
-                 <p>2-5PM</p>
+                 <p>{{event.time}}</p>
                </div>
                <div class="field">
                  <label class="label" for="spots">Spots</label>
